@@ -1,44 +1,56 @@
 package cliente;
 
-import java.io.DataInputStream;
+import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.InputStreamReader;
 import java.net.Socket;
 
 public class Conexion {
-    
-    final String HOST = "localhost";
 
-    final int PUERTO = 5000;
-
-    Socket sc;
-
-    DataOutputStream mensaje;
-
-    DataInputStream entrada;
-
-    
     public void initClient() /*ejecuta este metodo para correr el cliente */ {
 
+        // Creamos una instancia BuffererReader en la
+// que guardamos los datos introducido por el usuario
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
+// declaramos un objeto socket para realizar la comunicación
+        Socket socket;
+
+// declaramos e instanciamos un objeto de tipo byte
+        byte[] mensaje_bytes = new byte[256];
+
+// declaramos una variable de tipo string
+        String mensaje = "";
+
+// Declaramos un bloque try y catch para controlar la ejecución del subprograma
         try {
 
-            sc = new Socket(HOST, PUERTO);
-            /*conectar a un servidor en localhost con puerto 5000*/
+// Instanciamos un socket con la dirección del destino y el
+// puerto que vamos a utilizar para la comunicación
+            socket = new Socket("127.0.0.1", 6000);
 
-//creamos el flujo de datos por el que se enviara un mensaje
-            mensaje = new DataOutputStream(sc.getOutputStream());
+// Declaramos e instanciamos el objeto DataOutputStream
+// que nos valdrá para enviar datos al servidor destino
+            DataOutputStream out
+                    = new DataOutputStream(socket.getOutputStream());
 
-//enviamos el mensaje
-            mensaje.writeUTF("hola que tal!!");
-
-//cerramos la conexión
-            sc.close();
-
-        } catch (Exception e) {
-
-            System.out.println("Error: " + e.getMessage());
-
+// Creamos un bucle do while en el que enviamos al servidor el mensaje
+// los datos que hemos obtenido despues de ejecutar la función
+// "readLine" en la instancia "in"
+            do {
+                mensaje = in.readLine();
+// enviamos el mensaje codificado en UTF
+                out.writeUTF(mensaje);
+// mientras el mensaje no encuentre la cadena fin, seguiremos ejecutando
+// el bucle do-while
+            } while (!mensaje.startsWith("fin"));
+        } // utilizamos el catch para capturar los errores que puedan surgir
+        catch (Exception e) {
+// si existen errores los mostrará en la consola y después saldrá del
+// programa
+            System.err.println(e.getMessage());
+            System.exit(1);
         }
 
     }
-    
 }

@@ -1,68 +1,50 @@
 package servidor;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.InputStreamReader;
+import java.io.DataInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Conexion {
 
-    final int PUERTO = 5000;
-
-    ServerSocket sc;
-
-    Socket so;
-
-    DataOutputStream salida;
-
-    String mensajeRecibido;
-
     public void initServer() {
 
-        BufferedReader entrada;
+        // declaramos un objeto ServerSocket para realizar la comunicación
+        ServerSocket socket;
+// creamos una varible boolean con el valor a false
+        boolean fin = false;
 
+// Declaramos un bloque try y catch para controlar la ejecución del subprograma
         try {
 
-            sc = new ServerSocket(PUERTO);/* crea socket servidor que escuchara en puerto 5000*/
+// Instanciamos un ServerSocket con la dirección del destino y el
+// puerto que vamos a utilizar para la comunicación
+            socket = new ServerSocket(6000);
 
-            so = new Socket();
+// Creamos un socket_cli al que le pasamos el contenido del objeto socket después
+// de ejecutar la función accept que nos permitirá aceptar conexiones de clientes
+            Socket socket_cli = socket.accept();
 
-            System.out.println("Esperando una conexión:");
+// Declaramos e instanciamos el objeto DataInputStream
+// que nos valdrá para recibir datos del cliente
+            DataInputStream in
+                    = new DataInputStream(socket_cli.getInputStream());
 
-            so = sc.accept();
+// Creamos un bucle do while en el que recogemos el mensaje
+// que nos ha enviado el cliente y después lo mostramos
+// por consola
+            do {
+                String mensaje = "";
+                mensaje = in.readUTF();
+                System.out.println(mensaje);
+            } while (1 > 0);
+        } // utilizamos el catch para capturar los errores que puedan surgir
+        catch (Exception e) {
 
-//Inicia el socket, ahora esta esperando una conexión por parte del cliente
-            System.out.println("Un cliente se ha conectado.");
-
-//Canales de entrada y salida de datos
-            entrada = new BufferedReader(new InputStreamReader(so.getInputStream()));
-
-            salida = new DataOutputStream(so.getOutputStream());
-
-            System.out.println("Confirmando conexion al cliente....");
-
-            salida.writeUTF("Conexión exitosa...n envia un mensaje :D");
-
-//Recepcion de mensaje
-            mensajeRecibido = entrada.readLine();
-
-            System.out.println(mensajeRecibido);
-
-            salida.writeUTF("Se recibio tu mensaje.n Terminando conexion...");
-
-            salida.writeUTF("Gracias por conectarte, adios!");
-
-            System.out.println("Cerrando conexión...");
-
-            sc.close();//Aqui se cierra la conexión con el cliente
-
-        } catch (Exception e) {
-
-            System.out.println("Error: " + e.getMessage());
-
+// si existen errores los mostrará en la consola y después saldrá del
+// programa
+            System.err.println(e.getMessage());
+            System.exit(1);
         }
 
     }
-
 }
