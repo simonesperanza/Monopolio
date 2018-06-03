@@ -7,22 +7,17 @@ import java.net.Socket;
 
 public class Conexion {
 
-    public void initClient() /*ejecuta este metodo para correr el cliente */ {
+    public void initClient(){
 
-        // Creamos una instancia BuffererReader en la
+// Creamos una instancia BuffererReader en la
 // que guardamos los datos introducido por el usuario
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
 // declaramos un objeto socket para realizar la comunicación
         Socket socket;
 
-// declaramos e instanciamos un objeto de tipo byte
-        byte[] mensaje_bytes = new byte[256];
-
-// declaramos una variable de tipo string
         String mensaje = "";
 
-// Declaramos un bloque try y catch para controlar la ejecución del subprograma
         try {
 
 // Instanciamos un socket con la dirección del destino y el
@@ -44,13 +39,12 @@ public class Conexion {
 // mientras el mensaje no encuentre la cadena fin, seguiremos ejecutando
 // el bucle do-while
             } while (!mensaje.startsWith("fin"));
-        } // utilizamos el catch para capturar los errores que puedan surgir
+        }
         catch (Exception e) {
 // si existen errores los mostrará en la consola y después saldrá del
 // programa
             System.err.println(e.getMessage());
             System.exit(1);
         }
-
     }
 }
