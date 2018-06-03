@@ -18,6 +18,7 @@ public class Conexion {
 
 // Instanciamos un ServerSocket con la dirección del destino y el
 // puerto que vamos a utilizar para la comunicación
+//
             socket = new ServerSocket(6000);
 
 // Creamos un socket_cli al que le pasamos el contenido del objeto socket después
