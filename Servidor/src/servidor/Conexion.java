@@ -1,48 +1,73 @@
 package servidor;
 
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Conexion {
+    
+    static final int PUERTO = 6000;
 
-    public void initServer() {
+//  Declaramos un objeto ServerSocket para realizar la comunicación
+    ServerSocket serverSocket;
+    
+    DataInputStream _input1;
+    DataInputStream _input2;
 
-// declaramos un objeto ServerSocket para realizar la comunicación
-        ServerSocket socket;
-// creamos una varible boolean con el valor a false
-        boolean fin = false;
+    DataOutputStream _output1;
+    DataOutputStream _output2;
+    
+/**
+ * Inicia los sockets y streams de comunicacion del servidor
+ */
+public void initServer() {
 
-        try {
-// Instanciamos un ServerSocket con la dirección del destino y el
-// puerto que vamos a utilizar para la comunicación
+    try {
+    // Instanciamos ServerSocket con el puerto que vamos a utilizar
+    // para la comunicación con cada cliente
+    serverSocket = new ServerSocket(PUERTO+1);
 
-            socket = new ServerSocket(6000);
+    // Creamos un socket_cli para cada cliente, al que le pasamos el contenido
+    // del objeto socket después de ejecutar la función accept que nos permitirá
+    // aceptar conexiones de clientes
+    Socket socket_cli1 = serverSocket.accept();
+    Socket socket_cli2 = serverSocket.accept();
 
-// Creamos un socket_cli al que le pasamos el contenido del objeto socket después
-// de ejecutar la función accept que nos permitirá aceptar conexiones de clientes
-            Socket socket_cli = socket.accept();
-
-// DataInputStream recibe datos del cliente
-            DataInputStream in
-                    = new DataInputStream(socket_cli.getInputStream());
-
-// Creamos un bucle do while en el que recogemos el mensaje
-// que nos ha enviado el cliente y después lo mostramos
-// por consola
-            do {
-                String mensaje = "";
-                mensaje = in.readUTF();
-                System.out.println(mensaje);
-            } while (1 > 0);
-        }
-        catch (Exception e) {
-
-// si existen errores los mostrará en la consola y después saldrá del
-// programa
-            System.err.println(e.getMessage());
-            System.exit(1);
-        }
-
+    // DataInputStream recibe datos del cliente
+    _input1 = new DataInputStream(socket_cli1.getInputStream());
+    _input2 = new DataInputStream(socket_cli2.getInputStream());
+    
+    // DataOutputStream envia datos al cliente
+    _output1 = new DataOutputStream(socket_cli1.getOutputStream());
+    _output2 = new DataOutputStream(socket_cli2.getOutputStream());
+        System.out.println("Conectados los dos clientes\n");
+    } catch (Exception e) {
+        System.err.println(e.getMessage());
+        System.exit(1);
     }
+
+}
+
+    public ServerSocket getServerSocket() {
+        return serverSocket;
+    }
+
+    public DataInputStream getInput1() {
+        return _input1;
+    }
+
+    public DataInputStream getInput2() {
+        return _input2;
+    }
+
+    public DataOutputStream getOutput1() {
+        return _output1;
+    }
+
+    public DataOutputStream getOutput2() {
+        return _output2;
+    }
+    
+    
 }
