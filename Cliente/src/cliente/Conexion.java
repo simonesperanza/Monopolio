@@ -17,14 +17,14 @@ public class Conexion {
         int mensaje;
 
         try {
-            socket = new Socket("127.0.0.1", PUERTO + 1);
+            socket = new Socket("127.0.0.1", PUERTO);
             DataOutputStream out
                     = new DataOutputStream(socket.getOutputStream());
             do {
                 System.out.println("Enviar mensaje: ");
                 mensaje = Integer.parseInt(in.readLine());
                 out.writeInt(mensaje);
-            } while (mensaje != 1);
+            } while (mensaje != 0);
             System.out.println("Juego terminado.");
         } catch (Exception e) {
             System.err.println(e.getMessage());

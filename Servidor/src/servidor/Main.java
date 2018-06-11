@@ -1,5 +1,11 @@
 package servidor;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -7,7 +13,16 @@ public class Main {
         Conexion conn = new Conexion();
         conn.initServer();
 */
-        Servidor server = new Servidor();
-        server.iniciarJuego();
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            System.out.println("Introduzca cantidad de jugadores: ");
+            int totalJugadores = Integer.parseInt(in.readLine());
+            Servidor server = new Servidor(totalJugadores);
+            server.iniciarJuego();
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        
     }
 }
