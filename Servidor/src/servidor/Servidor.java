@@ -14,7 +14,7 @@ public class Servidor {
     // Indica la cantidad de jugadores máximos de la partida
     int _maxJugadores;
     
-    int _mensaje;
+    int _mensaje = 999;
     int _mensaje2;
 
     
@@ -45,26 +45,25 @@ public class Servidor {
                 _mensaje = 999;
                 while (_mensaje != 1){
                 System.out.println("Esperando mensaje de jugador 2: ");
-                _mensaje2 = _conn.getInput2().readInt();
-                System.out.println("Mensaje leido de 2: " + _mensaje2);
+                _mensaje = _conn.getInput2().readInt();
+                System.out.println("Mensaje leido de 2: " + _mensaje);
                 }
                 
                 _mensaje = 999;
                 if (_maxJugadores >= 3){
                     while (_mensaje != 1){
                     System.out.println("Esperando mensaje de jugador 3: ");
-                    _mensaje2 = _conn.getInput3().readInt();
-                    System.out.println("Mensaje leido de 2: " + _mensaje2);
+                    _mensaje = _conn.getInput3().readInt();
+                    System.out.println("Mensaje leido de 2: " + _mensaje);
                     }    
                 }
-                
                 
                 _mensaje = 999;
                 if (_maxJugadores >= 4){
                     while (_mensaje != 1){
                     System.out.println("Esperando mensaje de jugador 4: ");
-                    _mensaje2 = _conn.getInput4().readInt();
-                    System.out.println("Mensaje leido de 2: " + _mensaje2);
+                    _mensaje = _conn.getInput4().readInt();
+                    System.out.println("Mensaje leido de 2: " + _mensaje);
                     }    
                 }
                 
