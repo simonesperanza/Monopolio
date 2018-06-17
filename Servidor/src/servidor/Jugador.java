@@ -1,24 +1,60 @@
 package servidor;
 
 public class Jugador {
-    public char usuario;
-    public char pass;
-    public int pos[] = new int [40];
-    public float saldo;
-    public boolean turno = false;
-
-public static int dondeEstoy(int Pos[]){
-        int dondeEstoy=0;
-        boolean bandera = true;
-        int i = 0;
-        while(bandera){
-            if(Pos[i]==1){
-                dondeEstoy = i;
-                bandera = false;
-            }else{
-                i++;
-            }
-        }
-        return dondeEstoy;
+    private char usuario;
+    private char pass;
+    private int pos = 0;
+    private float saldo = 1500;
+    private boolean turno = false;  
+    
+    public char getUsuario() {
+        return usuario;
     }
+
+    public void setUsuario(char usuario) {
+        this.usuario = usuario;
+    }
+
+    public char getPass() {
+        return pass;
+    }
+
+    public void setPass(char pass) {
+        this.pass = pass;
+    }
+
+    public int getPos() {
+        return pos;
+    }
+
+    public void setPos(int pos) {
+        this.pos = pos;
+    }
+
+    public float getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(float saldo) {
+        this.saldo = saldo;
+    }
+
+    public boolean isTurno() {
+        return turno;
+    }
+
+    public void setTurno(boolean turno) {
+        this.turno = turno;
+    }
+    
+    public void ActualizarPosicion(int pasos, Jugador jugador){
+        int movimiento = jugador.pos + pasos;
+        if(movimiento <= 39){ //NO DI UNA VUELTA SOLO ACTUALIZO POSICION
+            jugador.pos = movimiento;
+        }else{ //DI UNA VUELTA, ACTUALIZO LA POSICION + AGREGO EL FEED POR DAR LA VUELTA
+            jugador.pos = movimiento - 40;
+            jugador.saldo = jugador.getSaldo() + 200;
+        }
+    }
+    
 }
