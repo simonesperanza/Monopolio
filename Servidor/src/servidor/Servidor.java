@@ -30,13 +30,15 @@ public class Servidor {
         
         // Incializo valores de los jugadores, puede ser en un constructor
         Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
-  
-        jugador1.saldo = reg.SALDO_INICIAL;
-        jugador2.saldo = reg.SALDO_INICIAL;
+        Jugador jugador2 = new Jugador();       
         
-        jugador1.pos[0] = 1;
-        jugador2.pos[0] = 1;
+        if(_maxJugadores >= 3){
+            Jugador jugador3 = new Jugador();
+        }
+        
+        if(_maxJugadores >= 3){
+            Jugador jugador4 = new Jugador();
+        }
         
         try {
             _conn = new Conexion(_maxJugadores);
@@ -95,22 +97,16 @@ public class Servidor {
     public void jugar(int mensaje, Jugador jugador){
         
         switch (mensaje){
-            case 2:
-                 //Mover ficha
+            //Mover ficha
+            case 2 :
                 //LANZO EL DADO Y ACTUALIZO LA POSICION DEL JUGADOR 
                 int pasos = lanzarDado(); //Lanzo el dado y guardo la cantidad de pasos a moverme
-                System.out.println(pasos);
-                int posIni = Jugador.dondeEstoy(jugador.pos); // Obtengo la posicion inicial del jugador
-                System.out.println(posIni);
-                jugador.pos[posIni] = 0; //Libero la casilla donde estaba inicialmente
-                //COMPRUEBO SI VOY A DAR UNA VUELTA
-                if(posIni + pasos < 39){//SI ENTRO ACA, SIGNIFICA QUE NO DI UNA VUELTA
-                    jugador.pos[posIni + pasos] = 1; // Marco mi posicion actual
-                }else{//SI ENTRO ACA, SIGNIFICA QUE DI UNA VUELTA
-                    jugador.pos[pasos - ( 39 - posIni)] = 1; // Marco mi posicion actual
-                    jugador.saldo = jugador.saldo + reg.SALDO_VUELTA; //Le aumento al jugador el saldo
-                break;   
-                }
+                System.out.println("");
+                System.out.println("CONTROL - Valor del dado: "+pasos);
+                System.out.println("CONTROL - Posicion Inicial: "+jugador.getPos());
+                jugador.ActualizarPosicion(pasos, jugador);
+                System.out.println("CONTROL - Posicion Final: "+jugador.getPos());
+                System.out.println("CONTROL - SALDO: "+jugador.getSaldo());
         }
     }
     
