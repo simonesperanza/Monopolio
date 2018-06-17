@@ -7,6 +7,16 @@ public class Jugador {
     private float saldo = 1500;
     private boolean turno = false;  
     
+    public void ActualizarPosicion(int pasos, Jugador jugador){
+        int movimiento = jugador.getPos() + pasos;
+        if(movimiento <= 39){ //NO DI UNA VUELTA SOLO ACTUALIZO POSICION
+            jugador.setPos(movimiento);
+        }else{ //DI UNA VUELTA, ACTUALIZO LA POSICION + AGREGO EL FEED POR DAR LA VUELTA
+            jugador.setPos(movimiento - 40);
+            jugador.setSaldo(jugador.getSaldo() + 200);
+        }
+    }
+    
     public char getUsuario() {
         return usuario;
     }
@@ -45,16 +55,6 @@ public class Jugador {
 
     public void setTurno(boolean turno) {
         this.turno = turno;
-    }
-    
-    public void ActualizarPosicion(int pasos, Jugador jugador){
-        int movimiento = jugador.pos + pasos;
-        if(movimiento <= 39){ //NO DI UNA VUELTA SOLO ACTUALIZO POSICION
-            jugador.pos = movimiento;
-        }else{ //DI UNA VUELTA, ACTUALIZO LA POSICION + AGREGO EL FEED POR DAR LA VUELTA
-            jugador.pos = movimiento - 40;
-            jugador.saldo = jugador.getSaldo() + 200;
-        }
     }
     
 }
