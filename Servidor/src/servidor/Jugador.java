@@ -1,6 +1,7 @@
 package servidor;
 
 public class Jugador {
+    private int nroJugador;
     private char usuario;
     private char pass;
     private int pos = 0;
@@ -15,6 +16,14 @@ public class Jugador {
             jugador.setPos(movimiento - 40);
             jugador.setSaldo(jugador.getSaldo() + 200);
         }
+    }
+
+    public int getNroJugador() {
+        return nroJugador;
+    }
+
+    public void setNroJugador(int nroJugador) {
+        this.nroJugador = nroJugador;
     }
     
     public char getUsuario() {

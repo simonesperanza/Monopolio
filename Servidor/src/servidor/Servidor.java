@@ -22,23 +22,24 @@ public class Servidor {
     int _mensaje = 999;
     int _mensaje2;
     
+    Tablero _tablero;
+    
     public Servidor(int max) {
         _maxJugadores = max;
+        _tablero = new Tablero();
     }
     
     public void iniciarJuego(){
         
         // Incializo valores de los jugadores, puede ser en un constructor
         Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();       
-        
-        if(_maxJugadores >= 3){
-            Jugador jugador3 = new Jugador();
-        }
-        
-        if(_maxJugadores >= 3){
-            Jugador jugador4 = new Jugador();
-        }
+        jugador1.setNroJugador(1);
+        Jugador jugador2 = new Jugador(); 
+        jugador2.setNroJugador(2);
+        Jugador jugador3 = new Jugador();
+        jugador3.setNroJugador(3);
+        Jugador jugador4 = new Jugador();
+        jugador4.setNroJugador(4);
         
         try {
             _conn = new Conexion(_maxJugadores);
@@ -72,6 +73,7 @@ public class Servidor {
                     System.out.println("Esperando mensaje de jugador 3: ");
                     _mensaje = _conn.getInput3().readInt();
                     System.out.println("Mensaje leido de 2: " + _mensaje);
+                    jugar(_mensaje, jugador3);
                     }    
                 }
                 
@@ -81,6 +83,7 @@ public class Servidor {
                     System.out.println("Esperando mensaje de jugador 4: ");
                     _mensaje = _conn.getInput4().readInt();
                     System.out.println("Mensaje leido de 2: " + _mensaje);
+                    jugar(_mensaje, jugador3);
                     }    
                 }
                 
@@ -107,6 +110,7 @@ public class Servidor {
                 jugador.ActualizarPosicion(pasos, jugador);
                 System.out.println("CONTROL - Posicion Final: "+jugador.getPos());
                 System.out.println("CONTROL - SALDO: "+jugador.getSaldo());
+                break;
         }
     }
     
@@ -114,6 +118,30 @@ public class Servidor {
         Random random = new Random();
         int dado = 2 + random.nextInt(11);
         return dado;
+    }
+    
+    public void ComprobarCasilla(Jugador jugador){
+        
+        int posicion = jugador.getPos();
+        Casilla casilla = _tablero.getTablero().get(posicion);
+        String tipo = casilla.getTipo();
+        
+        if (tipo.equals("Solar") || tipo.equals("Ferrocarril") || tipo.equals("Servicio")){
+          //if (casilla.getDueño() != 0 && casilla.getDueño() != )  
+        }
+        
+        else if (tipo.equals("Casualidad") || tipo.equals("Arca")){
+            
+        }
+        
+        else if (tipo.equals("Impuesto")){
+            
+        }
+        
+        else if (tipo.equals("Vaya_A_Carcel")){
+            
+        }
+        
     }
     
 }
