@@ -9,6 +9,8 @@ public class Conexion {
 
     static final int PUERTO = 6000;
     Socket socket;
+    
+    DataOutputStream _out;
 
     public void initClient() {
     // Creamos una instancia BuffererReader en la
@@ -18,17 +20,23 @@ public class Conexion {
 
         try {
             socket = new Socket("127.0.0.1", PUERTO);
-            DataOutputStream out
-                    = new DataOutputStream(socket.getOutputStream());
-            do {
+            _out = new DataOutputStream(socket.getOutputStream());
+            /*do {
                 System.out.println("Enviar mensaje: ");
                 mensaje = Integer.parseInt(in.readLine());
                 out.writeInt(mensaje);
             } while (mensaje != 0);
-            System.out.println("Juego terminado.");
+            System.out.println("Juego terminado.");*/
         } catch (Exception e) {
             System.err.println(e.getMessage());
             System.exit(1);
         }
     }
+
+    public DataOutputStream getOut() {
+        return _out;
+    }
+    
+    
+    
 }

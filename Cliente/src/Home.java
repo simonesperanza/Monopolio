@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 /**
@@ -15,8 +19,15 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
+    
+    Conexion _conn;
+    DataOutputStream _out;
+    
     public Home() {
         initComponents();
+        _conn = new Conexion();
+        _conn.initClient(); 
+        _out = _conn.getOut();
     }
 
     /**
@@ -383,6 +394,16 @@ public class Home extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         this.setLocation(x - xx, y - xy);  
     }                
+    
+    private void BotonDadosPressDown(java.awt.event.MouseEvent evt){
+        try {
+            _out.writeInt(2);
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        // pedir la posicion en que queda el usuario
+        // pedir el balance/cash
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Acciones;
