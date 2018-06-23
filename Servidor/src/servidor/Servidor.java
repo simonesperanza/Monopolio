@@ -32,11 +32,11 @@ public class Servidor {
         Jugador jugador1 = new Jugador();
         Jugador jugador2 = new Jugador();       
         
-        if(_maxJugadores >= 3){
+        if(_maxJugadores == 3){
             Jugador jugador3 = new Jugador();
         }
         
-        if(_maxJugadores >= 3){
+        if(_maxJugadores == 4){
             Jugador jugador4 = new Jugador();
         }
         
@@ -100,14 +100,12 @@ public class Servidor {
             //Mover ficha
             case 2 :
                 //LANZO EL DADO Y ACTUALIZO LA POSICION DEL JUGADOR 
-                int pasos = lanzarDado(); //Lanzo el dado y guardo la cantidad de pasos a moverme
-                System.out.println("");
-                System.out.println("CONTROL - Valor del dado: "+pasos);
-                System.out.println("CONTROL - Posicion Inicial: "+jugador.getPos());
+                int pasos = lanzarDado(); //Guardo la cantidad de pasos a moverme
                 jugador.ActualizarPosicion(pasos, jugador);
-                System.out.println("CONTROL - Posicion Final: "+jugador.getPos());
-                System.out.println("CONTROL - SALDO: "+jugador.getSaldo());
+                
+                break;
         }
+        
     }
     
     public int lanzarDado(){
