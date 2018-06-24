@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -22,12 +23,14 @@ public class Home extends javax.swing.JFrame {
     
     Conexion _conn;
     DataOutputStream _out;
+    DataInputStream _input;
     
     public Home() {
         initComponents();
         _conn = new Conexion();
         _conn.initClient(); 
         _out = _conn.getOut();
+        _input = _conn.getInput();
     }
 
     /**
@@ -406,12 +409,12 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(Perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Propiedades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 279, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        getContentPane().add(Controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 400, 850));
+        getContentPane().add(Controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 400, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -447,7 +450,8 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor2(BotonDados);
         try {
-            _out.writeInt(2);       
+            _out.writeInt(2);
+            System.out.println(_input.readInt());
         } catch (IOException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }

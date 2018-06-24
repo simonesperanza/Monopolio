@@ -1,6 +1,7 @@
 
 
 import java.io.BufferedReader;
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.Socket;
@@ -11,6 +12,7 @@ public class Conexion {
     Socket socket;
     
     DataOutputStream _out;
+    DataInputStream _input;
 
     public void initClient() {
     // Creamos una instancia BuffererReader en la
@@ -21,6 +23,7 @@ public class Conexion {
         try {
             socket = new Socket("127.0.0.1", PUERTO);
             _out = new DataOutputStream(socket.getOutputStream());
+            _input = new DataInputStream(socket.getInputStream());
             /*do {
                 System.out.println("Enviar mensaje: ");
                 mensaje = Integer.parseInt(in.readLine());
@@ -36,6 +39,12 @@ public class Conexion {
     public DataOutputStream getOut() {
         return _out;
     }
+
+    public DataInputStream getInput() {
+        return _input;
+    }
+    
+    
     
     
     

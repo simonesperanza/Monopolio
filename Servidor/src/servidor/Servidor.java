@@ -1,5 +1,6 @@
 package servidor;
 
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -56,7 +57,7 @@ public class Servidor {
                     System.out.println("Esperando mensaje de jugador 1: ");
                     _mensaje = _conn.getInput1().readInt();
                     System.out.println("Mensaje leido de 1: " + _mensaje);
-                    jugar(_mensaje, jugador1);
+                    jugar(_mensaje, jugador1, _conn.getOutput1());
                 }
                 
                 _mensaje = 999;
@@ -64,7 +65,7 @@ public class Servidor {
                     System.out.println("Esperando mensaje de jugador 2: ");
                     _mensaje = _conn.getInput2().readInt();
                     System.out.println("Mensaje leido de 2: " + _mensaje);
-                    jugar(_mensaje, jugador2);
+                    jugar(_mensaje, jugador2, _conn.getOutput2());
                 }
                 
                 _mensaje = 999;
@@ -73,7 +74,7 @@ public class Servidor {
                     System.out.println("Esperando mensaje de jugador 3: ");
                     _mensaje = _conn.getInput3().readInt();
                     System.out.println("Mensaje leido de 2: " + _mensaje);
-                    jugar(_mensaje, jugador3);
+                    jugar(_mensaje, jugador3, _conn.getOutput3());
                     }    
                 }
                 
@@ -83,7 +84,7 @@ public class Servidor {
                     System.out.println("Esperando mensaje de jugador 4: ");
                     _mensaje = _conn.getInput4().readInt();
                     System.out.println("Mensaje leido de 2: " + _mensaje);
-                    jugar(_mensaje, jugador3);
+                    jugar(_mensaje, jugador3, _conn.getOutput4());
                     }    
                 }
                 
@@ -97,8 +98,8 @@ public class Servidor {
     }
 
     
-    public int jugar(int mensaje, Jugador jugador){
-        int msg=100;
+    public int jugar(int mensaje, Jugador jugador, DataOutputStream output) throws IOException{
+        int respuesta = 0;
         switch (mensaje){
             //Mover ficha
             case 2 :
@@ -109,33 +110,33 @@ public class Servidor {
                 System.out.println("CONTROL - Posicion Final: "+jugador.getPos());
                 System.out.println("CONTROL - SALDO: "+jugador.getSaldo());
                 //ComprobarCasilla(jugador); ENVIO A COMPROBAR LA CASILLA
-                msg = 200 + jugador.getPos();
+                output.writeInt(jugador.getPos());
                 break;
             case 30:
                 //EL CLIENTE SELECCIONO LA OPCION DE COMPRAR CASILLA
                 System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
-                msg = jugador.ComprarCasilla(jugador, _tablero);
+                respuesta = jugador.ComprarCasilla(jugador, _tablero);
                 System.out.println("CONTROL - Saldo Final: "+jugador.getSaldo());
                 break;
             case 31:
                 //EL CLIENTE SELECCIONA LA OPCION DE VENDER CASILLA
                 System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
-                msg = jugador.VenderCasilla(jugador, _tablero);
+                respuesta = jugador.VenderCasilla(jugador, _tablero);
                 System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
                 break;
             case 32:
                 //EL CLIENTE SELECCIONA LA OPCION DE COMPRAR CASA
                 System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
-                msg = jugador.ComprarCasa(jugador, _tablero);
+                respuesta = jugador.ComprarCasa(jugador, _tablero);
                 System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
                 break;
             case 33:
                 //EL CLIENTE SELECCIONA LA OPCION DE COMPRAR HOTEL
                 System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
-                msg = jugador.ComprarHotel(jugador, _tablero);
+                respuesta = jugador.ComprarHotel(jugador, _tablero);
                 System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
         }
-        return msg;
+        return respuesta;
         
     }
     
