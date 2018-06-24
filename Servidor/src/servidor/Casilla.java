@@ -96,7 +96,15 @@ public class Casilla {
     }
 
     public float getAlquiler() {
+        if (isCasa()){
+            return _alquiler+_alquilerCasa;
+        }
+        else if (isHotel()){
+            return _alquiler+_alquilerHotel;
+        }
+        else{
         return _alquiler;
+        }
     }
 
     public void setAlquiler(float _alquiler) {

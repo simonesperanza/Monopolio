@@ -1,6 +1,7 @@
 package servidor;
 
 public class Jugador {
+    private boolean puedeJugar;
     private int nroJugador;
     private char usuario;
     private char pass;
@@ -136,6 +137,14 @@ public class Jugador {
 
     public void setTurno(boolean turno) {
         this.turno = turno;
+    }
+
+    public boolean isPuedeJugar() {
+        return puedeJugar;
+    }
+
+    public void setPuedeJugar(boolean puedeJugar) {
+        this.puedeJugar = puedeJugar;
     }
     
 }
