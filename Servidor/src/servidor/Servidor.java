@@ -205,6 +205,7 @@ public class Servidor {
         if (j.getSaldo() < 0){
             System.out.println("El jugador nro "+ j.getNroJugador()+ " esta en quiebra, "+
                     "sus propiedades seran transferidas al jugador "+ nuevoDueño);
+            j.setPuedeJugar(false);
             for (int i=0; i <=39; i++){
                 Casilla c = _tablero.getTablero().get(i);
                 if (c.getDueño() == j.getNroJugador()){
