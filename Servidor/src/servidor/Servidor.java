@@ -97,18 +97,45 @@ public class Servidor {
     }
 
     
-    public void jugar(int mensaje, Jugador jugador){
-        
+    public int jugar(int mensaje, Jugador jugador){
+        int msg=100;
         switch (mensaje){
             //Mover ficha
             case 2 :
                 //LANZO EL DADO Y ACTUALIZO LA POSICION DEL JUGADOR 
                 int pasos = lanzarDado(); //Guardo la cantidad de pasos a moverme
+                System.out.println("CONTROL - Posicion Inicial: "+jugador.getPos());
                 jugador.ActualizarPosicion(pasos, jugador);
                 System.out.println("CONTROL - Posicion Final: "+jugador.getPos());
                 System.out.println("CONTROL - SALDO: "+jugador.getSaldo());
+                //ComprobarCasilla(jugador); ENVIO A COMPROBAR LA CASILLA
+                msg = 200 + jugador.getPos();
                 break;
+            case 30:
+                //EL CLIENTE SELECCIONO LA OPCION DE COMPRAR CASILLA
+                System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
+                msg = jugador.ComprarCasilla(jugador, _tablero);
+                System.out.println("CONTROL - Saldo Final: "+jugador.getSaldo());
+                break;
+            case 31:
+                //EL CLIENTE SELECCIONA LA OPCION DE VENDER CASILLA
+                System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
+                msg = jugador.VenderCasilla(jugador, _tablero);
+                System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
+                break;
+            case 32:
+                //EL CLIENTE SELECCIONA LA OPCION DE COMPRAR CASA
+                System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
+                msg = jugador.ComprarCasa(jugador, _tablero);
+                System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
+                break;
+            case 33:
+                //EL CLIENTE SELECCIONA LA OPCION DE COMPRAR HOTEL
+                System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
+                msg = jugador.ComprarHotel(jugador, _tablero);
+                System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
         }
+        return msg;
         
     }
     
