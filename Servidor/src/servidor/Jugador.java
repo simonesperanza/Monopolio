@@ -1,7 +1,7 @@
 package servidor;
 
 public class Jugador {
-    private boolean puedeJugar;
+    private boolean puedeJugar = true;
     private int nroJugador;
     private char usuario;
     private char pass;

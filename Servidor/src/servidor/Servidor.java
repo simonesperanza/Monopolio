@@ -58,39 +58,47 @@ public class Servidor {
             try {
                 //Reseteando el mensaje
                 _mensaje = 999;
-                while (_mensaje != 1){
-                    System.out.println("Esperando mensaje de jugador 1: ");
-                    _mensaje = _conn.getInput1().readInt();
-                    System.out.println("Mensaje leido de 1: " + _mensaje);
-                    jugar(_mensaje, jugador1, _conn.getOutput1());
-                }
-                
-                _mensaje = 999;
-                while (_mensaje != 1){
-                    System.out.println("Esperando mensaje de jugador 2: ");
-                    _mensaje = _conn.getInput2().readInt();
-                    System.out.println("Mensaje leido de 2: " + _mensaje);
-                    jugar(_mensaje, jugador2, _conn.getOutput2());
-                }
-                
-                _mensaje = 999;
-                if (_maxJugadores >= 3){
+                if (jugador1.isPuedeJugar()){
                     while (_mensaje != 1){
-                    System.out.println("Esperando mensaje de jugador 3: ");
-                    _mensaje = _conn.getInput3().readInt();
-                    System.out.println("Mensaje leido de 2: " + _mensaje);
-                    jugar(_mensaje, jugador3, _conn.getOutput3());
-                    }    
+                        System.out.println("Esperando mensaje de jugador 1: ");
+                        _mensaje = _conn.getInput1().readInt();
+                        System.out.println("Mensaje leido de 1: " + _mensaje);
+                        jugar(_mensaje, jugador1, _conn.getOutput1());
+                    }
                 }
                 
                 _mensaje = 999;
-                if (_maxJugadores >= 4){
+                if (jugador2.isPuedeJugar()){
                     while (_mensaje != 1){
-                    System.out.println("Esperando mensaje de jugador 4: ");
-                    _mensaje = _conn.getInput4().readInt();
-                    System.out.println("Mensaje leido de 2: " + _mensaje);
-                    jugar(_mensaje, jugador3, _conn.getOutput4());
-                    }    
+                        System.out.println("Esperando mensaje de jugador 2: ");
+                        _mensaje = _conn.getInput2().readInt();
+                        System.out.println("Mensaje leido de 2: " + _mensaje);
+                        jugar(_mensaje, jugador2, _conn.getOutput2());
+                    }
+                }
+                
+                _mensaje = 999;
+                if (jugador3.isPuedeJugar()){
+                    if (_maxJugadores >= 3){
+                        while (_mensaje != 1){
+                        System.out.println("Esperando mensaje de jugador 3: ");
+                        _mensaje = _conn.getInput3().readInt();
+                        System.out.println("Mensaje leido de 2: " + _mensaje);
+                        jugar(_mensaje, jugador3, _conn.getOutput3());
+                        }    
+                    }
+                }
+                
+                _mensaje = 999;
+                if (jugador4.isPuedeJugar()){
+                    if (_maxJugadores >= 4){
+                        while (_mensaje != 1){
+                        System.out.println("Esperando mensaje de jugador 4: ");
+                        _mensaje = _conn.getInput4().readInt();
+                        System.out.println("Mensaje leido de 2: " + _mensaje);
+                        jugar(_mensaje, jugador3, _conn.getOutput4());
+                        }    
+                    }
                 }
                 
             } catch (IOException ex) {
