@@ -17,6 +17,78 @@ public class Jugador {
             jugador.setSaldo(jugador.getSaldo() + 200);
         }
     }
+    
+    public int ComprarCasilla(Jugador jugador, Tablero tablero){
+        int msg;
+        Casilla casilla = tablero.getTablero().get(jugador.getPos());
+        if( jugador.getSaldo() >= casilla.getPrecio() && casilla.getDueño()==0){
+            msg = 38;
+            jugador.setSaldo( jugador.getSaldo()- casilla.getPrecio());
+            casilla.setDueño(jugador.getNroJugador());
+        }else{
+            msg = 39;
+        }
+        return msg;
+    }
+    
+    public int VenderCasilla(Jugador jugador, Tablero tablero){
+        int msg=37;
+        Casilla casilla = tablero.getTablero().get(jugador.getPos());
+        if(casilla.getDueño()==jugador.getNroJugador()){
+            casilla.setDueño(0);//LIBERO LA CASILLA
+            casilla.setHotel(false);//LIBERO LA CASA
+            casilla.setCasa(false);// LIBERO HOTEL
+            jugador.setSaldo(jugador.getSaldo()+ (casilla.getPrecio()/2) );//RETORNO LA MITAD DEL DINERO DE LO QUE INICIALMENTE VALIA LA PROPIEDAD            
+        }else
+            msg=36;
+        return msg;
+    }
+    
+    public int ComprarCasa(Jugador jugador, Tablero tablero){
+        int msg = 35;
+        Casilla casilla = tablero.getTablero().get(jugador.getPos());
+        Casilla casilla1 = tablero.getTablero().get(casilla.getConjunto1());
+        if(jugador.getPos() != 39 && jugador.getPos() != 37 && jugador.getPos() != 3 && jugador.getPos() != 1){
+            Casilla casilla2 = tablero.getTablero().get(casilla.getConjunto2());
+            if(casilla.getDueño()==jugador.getNroJugador() && casilla1.getDueño()==jugador.getNroJugador() && casilla2.getDueño()==jugador.getNroJugador()){ //COMPRUEBO QUE SOY EL DUEÑO DE ESAS CASILLAS
+                jugador.setSaldo(jugador.getSaldo()-casilla.getPrecioCasa());
+                msg = 32;
+                casilla.setCasa(true);
+            }
+        }else{
+            if(casilla.getDueño()==jugador.getNroJugador() && casilla1.getDueño()==jugador.getNroJugador()){ //COMPRUEBO QUE SOY EL DUEÑO DE ESAS CASILLAS
+                jugador.setSaldo(jugador.getSaldo()-casilla.getPrecioCasa());
+                msg = 32;
+                casilla.setCasa(true);
+            }
+        }
+        
+        return msg;
+    }
+    
+    public int ComprarHotel(Jugador jugador, Tablero tablero){
+        int msg = 34;
+            Casilla casilla = tablero.getTablero().get(jugador.getPos());
+            Casilla casilla1 = tablero.getTablero().get(casilla.getConjunto1());
+            if(jugador.getPos() != 39 && jugador.getPos() != 37 && jugador.getPos() != 3 && jugador.getPos() != 1){
+                Casilla casilla2 = tablero.getTablero().get(casilla.getConjunto2());
+                if(casilla.getDueño()==jugador.getNroJugador() && casilla1.getDueño()==jugador.getNroJugador() && casilla2.getDueño()==jugador.getNroJugador()){
+                    if(casilla.isCasa()==true && casilla1.isCasa()==true && casilla2.isCasa()==true){
+                        jugador.setSaldo(jugador.getSaldo()-casilla.getPrecioHotel());
+                        msg = 33;
+                        casilla.setHotel(true);
+                    }
+                }
+                
+            }else{
+                if(casilla.getDueño()==jugador.getNroJugador() && casilla1.getDueño()==jugador.getNroJugador()){
+                    jugador.setSaldo(jugador.getSaldo()-casilla.getPrecioHotel());
+                    msg = 33;
+                    casilla.setHotel(true);
+                }
+            }
+        return msg;
+    }
 
     public int getNroJugador() {
         return nroJugador;
