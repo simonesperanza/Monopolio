@@ -17,6 +17,7 @@ import javax.swing.JPanel;
  */
 public class Home extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form Home
      */
@@ -79,6 +80,13 @@ public class Home extends javax.swing.JFrame {
         Propiedades = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        Login = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        BotonLogin = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -367,11 +375,11 @@ public class Home extends javax.swing.JFrame {
         );
         BotonFinTurnoLayout.setVerticalGroup(
             BotonFinTurnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(BotonFinTurnoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel9)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout AccionesLayout = new javax.swing.GroupLayout(Acciones);
@@ -455,12 +463,112 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(Perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Propiedades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
                 .addComponent(Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        getContentPane().add(Controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 400, 670));
+        getContentPane().add(Controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 400, 850));
+
+        Login.setBackground(new java.awt.Color(51, 102, 255));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel2.setBackground(new java.awt.Color(51, 102, 255));
+
+        jLabel4.setFont(new java.awt.Font("Fira Code", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Juego");
+
+        jTextField1.setFont(new java.awt.Font("Fira Code", 0, 14)); // NOI18N
+        jTextField1.setText("Direccion IP");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        BotonLogin.setBackground(new java.awt.Color(153, 153, 153));
+        BotonLogin.setFont(new java.awt.Font("Fira Code", 0, 18)); // NOI18N
+        BotonLogin.setText("Ingresar");
+        BotonLogin.setBorder(null);
+        BotonLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BotonLoginMousePressed(evt);
+            }
+        });
+        BotonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonLoginActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(234, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(BotonLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(209, 209, 209))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loginMonopoly1.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(316, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(279, 279, 279))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(115, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
+        Login.setLayout(LoginLayout);
+        LoginLayout.setHorizontalGroup(
+            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LoginLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        LoginLayout.setVerticalGroup(
+            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LoginLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 850));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -482,6 +590,10 @@ public class Home extends javax.swing.JFrame {
     {
         panel.setBackground(new java.awt.Color(240,240,240));
     }
+    
+    /*
+        BOTON LANZAR DADOS
+    */
     private void BotonDadosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonDadosMouseExited
         // TODO add your handling code here:
         resetColor(BotonDados);
@@ -496,13 +608,13 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor2(BotonDados);
         try {
-            _out.writeInt(2);
-            System.out.println(_input.readInt());
+            _out.writeInt(2);                               // Mensaje enviado, se lanzaron los dados
+            System.out.println(_input.readInt());          // Recepcion de la posicion donde cae el usuario
+            _out.writeInt(15);                              // Mensaje enviado, solicitando balance actual
+            System.out.println(_input.readInt());          // 
         } catch (IOException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
-        // pedir la posicion en que queda el usuario
-        // pedir el balance/cash
     }//GEN-LAST:event_BotonDadosMousePressed
 
     private void BotonComprarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonComprarMouseEntered
@@ -539,16 +651,34 @@ public class Home extends javax.swing.JFrame {
 
     private void BotonFinTurnoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonFinTurnoMouseEntered
         // TODO add your handling code here:
+        setColor(BotonFinTurno);
     }//GEN-LAST:event_BotonFinTurnoMouseEntered
 
     private void BotonFinTurnoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonFinTurnoMouseExited
         // TODO add your handling code here:
+        resetColor(BotonFinTurno);
     }//GEN-LAST:event_BotonFinTurnoMouseExited
 
     private void BotonFinTurnoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonFinTurnoMousePressed
         // TODO add your handling code here:
+        setColor2(BotonFinTurno);
     }//GEN-LAST:event_BotonFinTurnoMousePressed
 
+    private void BotonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonLoginActionPerformed
+
+    private void BotonLoginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonLoginMousePressed
+        // TODO add your handling code here:
+        Login.setVisible(false);
+    }//GEN-LAST:event_BotonLoginMousePressed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -620,6 +750,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel BotonComprar;
     private javax.swing.JPanel BotonDados;
     private javax.swing.JPanel BotonFinTurno;
+    private javax.swing.JButton BotonLogin;
     private javax.swing.JPanel BotonVender;
     private javax.swing.JLabel Carta;
     private javax.swing.JLabel Casa1;
@@ -629,6 +760,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel Controles;
     private javax.swing.JLabel ImagenTablero;
     private javax.swing.JLabel Jugador;
+    private javax.swing.JPanel Login;
     private javax.swing.JPanel Perfil;
     private javax.swing.JLabel PiezaBarco;
     private javax.swing.JLabel PiezaCarro;
@@ -643,14 +775,19 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
