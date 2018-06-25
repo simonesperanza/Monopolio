@@ -73,6 +73,9 @@ public class Home extends javax.swing.JFrame {
         BotonVender = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        BotonVender1 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         Propiedades = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -227,7 +230,7 @@ public class Home extends javax.swing.JFrame {
         BotonDadosLayout.setHorizontalGroup(
             BotonDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonDadosLayout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addGroup(BotonDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonDadosLayout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -236,18 +239,18 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonDadosLayout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(27, 27, 27)))
-                .addGap(30, 30, 30))
+                .addGap(28, 28, 28))
         );
         BotonDadosLayout.setVerticalGroup(
             BotonDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BotonDadosLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonDadosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(BotonDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(45, 45, 45))
         );
 
         BotonComprar.setBackground(new java.awt.Color(235, 236, 238));
@@ -316,20 +319,59 @@ public class Home extends javax.swing.JFrame {
         BotonVenderLayout.setHorizontalGroup(
             BotonVenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BotonVenderLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         BotonVenderLayout.setVerticalGroup(
             BotonVenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonVenderLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(BotonVenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING))
-                .addContainerGap())
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(BotonVenderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        BotonVender1.setBackground(new java.awt.Color(235, 236, 238));
+        BotonVender1.setPreferredSize(new java.awt.Dimension(162, 51));
+        BotonVender1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotonVender1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotonVender1MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BotonVender1MousePressed(evt);
+            }
+        });
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-return-30.png"))); // NOI18N
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 102, 255));
+        jLabel11.setText("FIN TURNO");
+
+        javax.swing.GroupLayout BotonVender1Layout = new javax.swing.GroupLayout(BotonVender1);
+        BotonVender1.setLayout(BotonVender1Layout);
+        BotonVender1Layout.setHorizontalGroup(
+            BotonVender1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BotonVender1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        BotonVender1Layout.setVerticalGroup(
+            BotonVender1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BotonVender1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout AccionesLayout = new javax.swing.GroupLayout(Acciones);
@@ -339,8 +381,10 @@ public class Home extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AccionesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(AccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BotonComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonVender, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(BotonComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotonVender, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BotonVender1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonDados, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -349,11 +393,13 @@ public class Home extends javax.swing.JFrame {
             .addGroup(AccionesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(AccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotonDados, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                    .addComponent(BotonDados, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                     .addGroup(AccionesLayout.createSequentialGroup()
                         .addComponent(BotonComprar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonVender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonVender1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -409,12 +455,12 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(Perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Propiedades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        getContentPane().add(Controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 400, 580));
+        getContentPane().add(Controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 400, 670));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -469,11 +515,6 @@ public class Home extends javax.swing.JFrame {
         resetColor(BotonComprar);
     }//GEN-LAST:event_BotonComprarMouseExited
 
-    // NO FUNCIONA AUN, arreglar
-    /*public void DoSomethingAlpha(Jugador jug) {
-      jug.getSaldo();
-    }*/
-    
     private void BotonComprarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonComprarMousePressed
         // TODO add your handling code here:
         setColor2(BotonComprar);
@@ -495,6 +536,18 @@ public class Home extends javax.swing.JFrame {
         setColor2(BotonVender);
         
     }//GEN-LAST:event_BotonVenderMousePressed
+
+    private void BotonVender1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonVender1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonVender1MouseEntered
+
+    private void BotonVender1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonVender1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonVender1MouseExited
+
+    private void BotonVender1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonVender1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonVender1MousePressed
 
     /**
      * @param args the command line arguments
@@ -567,6 +620,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel BotonComprar;
     private javax.swing.JPanel BotonDados;
     private javax.swing.JPanel BotonVender;
+    private javax.swing.JPanel BotonVender1;
     private javax.swing.JLabel Casa1;
     private javax.swing.JLabel Casa2;
     private javax.swing.JLabel Casa3;
@@ -585,6 +639,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel Tablero;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
@@ -594,6 +649,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
