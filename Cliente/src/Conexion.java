@@ -13,6 +13,11 @@ public class Conexion {
     
     DataOutputStream _out;
     DataInputStream _input;
+    String _ip;
+    
+    public Conexion(String ip){
+        _ip = ip;
+    }
 
     public void initClient() {
     // Creamos una instancia BuffererReader en la
@@ -21,7 +26,7 @@ public class Conexion {
         int mensaje;
 
         try {
-            socket = new Socket("127.0.0.1", PUERTO);
+            socket = new Socket(_ip, PUERTO);
             _out = new DataOutputStream(socket.getOutputStream());
             _input = new DataInputStream(socket.getInputStream());
             /*do {

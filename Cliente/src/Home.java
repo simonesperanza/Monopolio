@@ -28,10 +28,64 @@ public class Home extends javax.swing.JFrame {
     
     public Home() {
         initComponents();
-        _conn = new Conexion();
+       /* _conn = new Conexion();
         _conn.initClient(); 
         _out = _conn.getOut();
         _input = _conn.getInput();
+        */
+       
+       /*
+            Ocultamos el TABLERO y CONTROLES para evitar todo conflicto
+       */
+       Tablero.setVisible(false);
+       Controles.setVisible(false);
+        
+        /*
+            CARTAS SE PONEN NO VISIBLES DESDE EL INICIO
+        */
+        Carta0.setVisible(false);
+        Carta1.setVisible(false);
+        Carta2.setVisible(false);
+        Carta3.setVisible(false);
+        Carta4.setVisible(false);
+        Carta5.setVisible(false);
+        Carta6.setVisible(false);
+        Carta7.setVisible(false);
+        Carta8.setVisible(false);
+        Carta9.setVisible(false);
+        Carta10.setVisible(false);
+        Carta11.setVisible(false);
+        Carta12.setVisible(false);
+        Carta13.setVisible(false);
+        Carta14.setVisible(false);
+        Carta15.setVisible(false);
+        Carta16.setVisible(false);
+        Carta17.setVisible(false);
+        Carta18.setVisible(false);
+        Carta19.setVisible(false);
+        Carta20.setVisible(false);
+        Carta21.setVisible(false);
+        Carta22.setVisible(false);
+        Carta23.setVisible(false);
+        Carta24.setVisible(false);
+        Carta25.setVisible(false);
+        Carta26.setVisible(false);
+        Carta27.setVisible(false);
+        Carta28.setVisible(false);
+        Carta29.setVisible(false);
+        Carta30.setVisible(false);
+        Carta31.setVisible(false);
+        Carta32.setVisible(false);
+        Carta33.setVisible(false);
+        Carta34.setVisible(false);
+        Carta35.setVisible(false);
+        Carta36.setVisible(false);
+        Carta37.setVisible(false);
+        Carta38.setVisible(false);
+        Carta39.setVisible(false);
+        Carta40.setVisible(false);
+        
+
     }
 
     /**
@@ -43,16 +97,104 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Login = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        IPlogin = new javax.swing.JTextField();
+        BotonLogin = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
         Tablero = new javax.swing.JPanel();
         PiezaCarro = new javax.swing.JLabel();
         PiezaZapato = new javax.swing.JLabel();
         PiezaBarco = new javax.swing.JLabel();
         PiezaSombrero = new javax.swing.JLabel();
+        Carta0 = new javax.swing.JLabel();
         Casa1 = new javax.swing.JLabel();
         Casa2 = new javax.swing.JLabel();
         Casa3 = new javax.swing.JLabel();
-        Carta = new javax.swing.JLabel();
+        Carta1 = new javax.swing.JLabel();
+        Carta2 = new javax.swing.JLabel();
+        Carta3 = new javax.swing.JLabel();
+        Carta4 = new javax.swing.JLabel();
+        Carta5 = new javax.swing.JLabel();
+        Carta6 = new javax.swing.JLabel();
+        Carta7 = new javax.swing.JLabel();
+        Carta8 = new javax.swing.JLabel();
+        Carta9 = new javax.swing.JLabel();
+        Carta10 = new javax.swing.JLabel();
+        Carta11 = new javax.swing.JLabel();
+        Carta12 = new javax.swing.JLabel();
+        Carta13 = new javax.swing.JLabel();
+        Carta14 = new javax.swing.JLabel();
+        Carta15 = new javax.swing.JLabel();
+        Carta16 = new javax.swing.JLabel();
+        Carta17 = new javax.swing.JLabel();
+        Carta18 = new javax.swing.JLabel();
+        Carta19 = new javax.swing.JLabel();
+        Carta20 = new javax.swing.JLabel();
+        Carta21 = new javax.swing.JLabel();
+        Carta22 = new javax.swing.JLabel();
+        Carta23 = new javax.swing.JLabel();
+        Carta24 = new javax.swing.JLabel();
+        Carta25 = new javax.swing.JLabel();
+        Carta26 = new javax.swing.JLabel();
+        Carta27 = new javax.swing.JLabel();
+        Carta28 = new javax.swing.JLabel();
+        Carta29 = new javax.swing.JLabel();
+        Carta30 = new javax.swing.JLabel();
+        Carta31 = new javax.swing.JLabel();
+        Carta32 = new javax.swing.JLabel();
+        Carta33 = new javax.swing.JLabel();
+        Carta34 = new javax.swing.JLabel();
+        Carta35 = new javax.swing.JLabel();
+        Carta36 = new javax.swing.JLabel();
+        Carta37 = new javax.swing.JLabel();
+        Carta38 = new javax.swing.JLabel();
+        Carta39 = new javax.swing.JLabel();
+        Carta40 = new javax.swing.JLabel();
         ImagenTablero = new javax.swing.JLabel();
+        CH0 = new javax.swing.JPanel();
+        CH1 = new javax.swing.JPanel();
+        CH2 = new javax.swing.JPanel();
+        CH3 = new javax.swing.JPanel();
+        CH4 = new javax.swing.JPanel();
+        CH5 = new javax.swing.JPanel();
+        CH6 = new javax.swing.JPanel();
+        CH7 = new javax.swing.JPanel();
+        CH8 = new javax.swing.JPanel();
+        CH9 = new javax.swing.JPanel();
+        CH10 = new javax.swing.JPanel();
+        CH40 = new javax.swing.JPanel();
+        CH11 = new javax.swing.JPanel();
+        CH12 = new javax.swing.JPanel();
+        CH13 = new javax.swing.JPanel();
+        CH14 = new javax.swing.JPanel();
+        CH15 = new javax.swing.JPanel();
+        CH16 = new javax.swing.JPanel();
+        CH17 = new javax.swing.JPanel();
+        CH18 = new javax.swing.JPanel();
+        CH19 = new javax.swing.JPanel();
+        CH20 = new javax.swing.JPanel();
+        CH21 = new javax.swing.JPanel();
+        CH22 = new javax.swing.JPanel();
+        CH23 = new javax.swing.JPanel();
+        CH24 = new javax.swing.JPanel();
+        CH25 = new javax.swing.JPanel();
+        CH26 = new javax.swing.JPanel();
+        CH27 = new javax.swing.JPanel();
+        CH28 = new javax.swing.JPanel();
+        CH29 = new javax.swing.JPanel();
+        CH30 = new javax.swing.JPanel();
+        CH31 = new javax.swing.JPanel();
+        CH32 = new javax.swing.JPanel();
+        CH33 = new javax.swing.JPanel();
+        CH34 = new javax.swing.JPanel();
+        CH35 = new javax.swing.JPanel();
+        CH36 = new javax.swing.JPanel();
+        CH37 = new javax.swing.JPanel();
+        CH38 = new javax.swing.JPanel();
+        CH39 = new javax.swing.JPanel();
         Controles = new javax.swing.JPanel();
         Perfil = new javax.swing.JPanel();
         PiezaPerfil = new javax.swing.JLabel();
@@ -80,16 +222,109 @@ public class Home extends javax.swing.JFrame {
         Propiedades = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        Login = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        BotonLogin = new javax.swing.JButton();
-        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Login.setBackground(new java.awt.Color(51, 102, 255));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel2.setBackground(new java.awt.Color(51, 102, 255));
+
+        jLabel4.setFont(new java.awt.Font("Fira Code", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Juego");
+
+        IPlogin.setFont(new java.awt.Font("Fira Code", 0, 14)); // NOI18N
+        IPlogin.setText("Direccion IP");
+        IPlogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IPloginActionPerformed(evt);
+            }
+        });
+
+        BotonLogin.setBackground(new java.awt.Color(153, 153, 153));
+        BotonLogin.setFont(new java.awt.Font("Fira Code", 0, 18)); // NOI18N
+        BotonLogin.setText("Ingresar");
+        BotonLogin.setBorder(null);
+        BotonLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BotonLoginMousePressed(evt);
+            }
+        });
+        BotonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonLoginActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(234, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(BotonLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(IPlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(209, 209, 209))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(IPlogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loginMonopoly1.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(316, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(279, 279, 279))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(115, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
+        Login.setLayout(LoginLayout);
+        LoginLayout.setHorizontalGroup(
+            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LoginLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        LoginLayout.setVerticalGroup(
+            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LoginLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 850));
 
         Tablero.setLayout(null);
 
@@ -107,7 +342,9 @@ public class Home extends javax.swing.JFrame {
 
         PiezaSombrero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hat_piece50.png"))); // NOI18N
         Tablero.add(PiezaSombrero);
-        PiezaSombrero.setBounds(750, 130, 50, 40);
+        PiezaSombrero.setBounds(770, 130, 50, 40);
+        Tablero.add(Carta0);
+        Carta0.setBounds(270, 200, 320, 410);
 
         Casa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_Apartment_25px.png"))); // NOI18N
         Tablero.add(Casa1);
@@ -121,14 +358,1088 @@ public class Home extends javax.swing.JFrame {
         Tablero.add(Casa3);
         Casa3.setBounds(690, 740, 20, 18);
 
-        Carta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/green_Pacific Avenue.png"))); // NOI18N
-        Carta.setText("jLabel4");
-        Tablero.add(Carta);
-        Carta.setBounds(270, 200, 320, 410);
+        Carta1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/brown_Mediterranean Avenue.png"))); // NOI18N
+        Tablero.add(Carta1);
+        Carta1.setBounds(270, 200, 320, 410);
+        Tablero.add(Carta2);
+        Carta2.setBounds(270, 200, 320, 410);
+
+        Carta3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/brown_Baltic Avenue.png"))); // NOI18N
+        Tablero.add(Carta3);
+        Carta3.setBounds(270, 200, 320, 410);
+        Tablero.add(Carta4);
+        Carta4.setBounds(270, 200, 320, 410);
+
+        Carta5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RR_Reading Railroad.png"))); // NOI18N
+        Tablero.add(Carta5);
+        Carta5.setBounds(270, 200, 320, 410);
+
+        Carta6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lightBlue_Oriental Avenue.png"))); // NOI18N
+        Tablero.add(Carta6);
+        Carta6.setBounds(270, 200, 320, 410);
+        Tablero.add(Carta7);
+        Carta7.setBounds(270, 200, 320, 410);
+
+        Carta8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lightBlue_Vermont Avenue.png"))); // NOI18N
+        Tablero.add(Carta8);
+        Carta8.setBounds(270, 200, 320, 410);
+
+        Carta9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lightBlue_Connecticut Avenue.png"))); // NOI18N
+        Tablero.add(Carta9);
+        Carta9.setBounds(270, 200, 320, 410);
+        Tablero.add(Carta10);
+        Carta10.setBounds(270, 200, 320, 410);
+
+        Carta11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pink_St Charles Place.png"))); // NOI18N
+        Tablero.add(Carta11);
+        Carta11.setBounds(270, 200, 320, 410);
+
+        Carta12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Utility_Electric Company.png"))); // NOI18N
+        Tablero.add(Carta12);
+        Carta12.setBounds(270, 200, 320, 410);
+
+        Carta13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pink_States Avenue.png"))); // NOI18N
+        Tablero.add(Carta13);
+        Carta13.setBounds(270, 200, 320, 410);
+
+        Carta14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pink_Virginia Avenue.png"))); // NOI18N
+        Tablero.add(Carta14);
+        Carta14.setBounds(270, 200, 320, 410);
+
+        Carta15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RR_Pennsylvania Railroad.png"))); // NOI18N
+        Tablero.add(Carta15);
+        Carta15.setBounds(270, 200, 320, 410);
+
+        Carta16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/orange_St James Place.png"))); // NOI18N
+        Tablero.add(Carta16);
+        Carta16.setBounds(270, 200, 320, 410);
+        Tablero.add(Carta17);
+        Carta17.setBounds(270, 200, 320, 410);
+
+        Carta18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/orange_Tennessee Avenue.png"))); // NOI18N
+        Tablero.add(Carta18);
+        Carta18.setBounds(270, 200, 320, 410);
+
+        Carta19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/orange_New York Avenue.png"))); // NOI18N
+        Tablero.add(Carta19);
+        Carta19.setBounds(270, 200, 320, 410);
+        Tablero.add(Carta20);
+        Carta20.setBounds(270, 200, 320, 410);
+
+        Carta21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/red_Kentucky Avenue.png"))); // NOI18N
+        Tablero.add(Carta21);
+        Carta21.setBounds(270, 200, 320, 410);
+        Tablero.add(Carta22);
+        Carta22.setBounds(270, 200, 320, 410);
+
+        Carta23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/red_Indiana Avenue.png"))); // NOI18N
+        Tablero.add(Carta23);
+        Carta23.setBounds(270, 200, 320, 410);
+
+        Carta24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/red_Illinois Avenue.png"))); // NOI18N
+        Tablero.add(Carta24);
+        Carta24.setBounds(270, 200, 320, 410);
+
+        Carta25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RR_B O Railroad.png"))); // NOI18N
+        Tablero.add(Carta25);
+        Carta25.setBounds(270, 200, 320, 410);
+
+        Carta26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/yellow_Atlantic Avenue.png"))); // NOI18N
+        Tablero.add(Carta26);
+        Carta26.setBounds(270, 200, 320, 410);
+
+        Carta27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/yellow_Ventnor Avenue.png"))); // NOI18N
+        Tablero.add(Carta27);
+        Carta27.setBounds(270, 200, 320, 410);
+
+        Carta28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Utility_Water Works.png"))); // NOI18N
+        Tablero.add(Carta28);
+        Carta28.setBounds(270, 200, 320, 410);
+
+        Carta29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/yellow_Marvin Gardens.png"))); // NOI18N
+        Tablero.add(Carta29);
+        Carta29.setBounds(270, 200, 320, 410);
+        Tablero.add(Carta30);
+        Carta30.setBounds(270, 200, 320, 410);
+
+        Carta31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/green_Pacific Avenue.png"))); // NOI18N
+        Tablero.add(Carta31);
+        Carta31.setBounds(270, 200, 320, 410);
+
+        Carta32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/green_North Carolina Avenue.png"))); // NOI18N
+        Tablero.add(Carta32);
+        Carta32.setBounds(270, 200, 320, 410);
+        Tablero.add(Carta33);
+        Carta33.setBounds(270, 200, 320, 410);
+
+        Carta34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/green_Pennsylvania Avenue.png"))); // NOI18N
+        Tablero.add(Carta34);
+        Carta34.setBounds(270, 200, 320, 410);
+
+        Carta35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RR_Short Line.png"))); // NOI18N
+        Tablero.add(Carta35);
+        Carta35.setBounds(270, 200, 320, 410);
+        Tablero.add(Carta36);
+        Carta36.setBounds(270, 200, 320, 410);
+
+        Carta37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/darkBlue_Park Place.png"))); // NOI18N
+        Tablero.add(Carta37);
+        Carta37.setBounds(270, 200, 320, 410);
+        Tablero.add(Carta38);
+        Carta38.setBounds(270, 200, 320, 410);
+
+        Carta39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/darkBlue_Boardwalk.png"))); // NOI18N
+        Tablero.add(Carta39);
+        Carta39.setBounds(270, 200, 320, 410);
+        Tablero.add(Carta40);
+        Carta40.setBounds(270, 200, 320, 410);
 
         ImagenTablero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/monopoly_board850.jpg"))); // NOI18N
         Tablero.add(ImagenTablero);
         ImagenTablero.setBounds(0, 0, 850, 850);
+
+        CH0.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH0MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH0MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH0Layout = new javax.swing.GroupLayout(CH0);
+        CH0.setLayout(CH0Layout);
+        CH0Layout.setHorizontalGroup(
+            CH0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH0Layout.setVerticalGroup(
+            CH0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH0);
+        CH0.setBounds(740, 740, 110, 110);
+
+        CH1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH1MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH1Layout = new javax.swing.GroupLayout(CH1);
+        CH1.setLayout(CH1Layout);
+        CH1Layout.setHorizontalGroup(
+            CH1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH1Layout.setVerticalGroup(
+            CH1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH1);
+        CH1.setBounds(670, 740, 70, 110);
+
+        CH2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH2MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH2Layout = new javax.swing.GroupLayout(CH2);
+        CH2.setLayout(CH2Layout);
+        CH2Layout.setHorizontalGroup(
+            CH2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH2Layout.setVerticalGroup(
+            CH2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH2);
+        CH2.setBounds(600, 740, 70, 110);
+
+        CH3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH3MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH3Layout = new javax.swing.GroupLayout(CH3);
+        CH3.setLayout(CH3Layout);
+        CH3Layout.setHorizontalGroup(
+            CH3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH3Layout.setVerticalGroup(
+            CH3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH3);
+        CH3.setBounds(530, 740, 70, 110);
+
+        CH4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH4MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH4Layout = new javax.swing.GroupLayout(CH4);
+        CH4.setLayout(CH4Layout);
+        CH4Layout.setHorizontalGroup(
+            CH4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH4Layout.setVerticalGroup(
+            CH4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH4);
+        CH4.setBounds(460, 740, 70, 110);
+
+        CH5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH5MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH5Layout = new javax.swing.GroupLayout(CH5);
+        CH5.setLayout(CH5Layout);
+        CH5Layout.setHorizontalGroup(
+            CH5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH5Layout.setVerticalGroup(
+            CH5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH5);
+        CH5.setBounds(390, 740, 70, 110);
+
+        CH6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH6MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH6Layout = new javax.swing.GroupLayout(CH6);
+        CH6.setLayout(CH6Layout);
+        CH6Layout.setHorizontalGroup(
+            CH6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH6Layout.setVerticalGroup(
+            CH6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH6);
+        CH6.setBounds(320, 740, 70, 110);
+
+        CH7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH7MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH7Layout = new javax.swing.GroupLayout(CH7);
+        CH7.setLayout(CH7Layout);
+        CH7Layout.setHorizontalGroup(
+            CH7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH7Layout.setVerticalGroup(
+            CH7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH7);
+        CH7.setBounds(250, 740, 70, 110);
+
+        CH8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH8MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH8Layout = new javax.swing.GroupLayout(CH8);
+        CH8.setLayout(CH8Layout);
+        CH8Layout.setHorizontalGroup(
+            CH8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH8Layout.setVerticalGroup(
+            CH8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH8);
+        CH8.setBounds(180, 740, 70, 110);
+
+        CH9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH9MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH9Layout = new javax.swing.GroupLayout(CH9);
+        CH9.setLayout(CH9Layout);
+        CH9Layout.setHorizontalGroup(
+            CH9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH9Layout.setVerticalGroup(
+            CH9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH9);
+        CH9.setBounds(110, 740, 70, 110);
+
+        CH10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH10MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH10Layout = new javax.swing.GroupLayout(CH10);
+        CH10.setLayout(CH10Layout);
+        CH10Layout.setHorizontalGroup(
+            CH10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH10Layout.setVerticalGroup(
+            CH10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH10);
+        CH10.setBounds(0, 740, 110, 110);
+
+        CH40.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH40MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH40MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH40Layout = new javax.swing.GroupLayout(CH40);
+        CH40.setLayout(CH40Layout);
+        CH40Layout.setHorizontalGroup(
+            CH40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 80, Short.MAX_VALUE)
+        );
+        CH40Layout.setVerticalGroup(
+            CH40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 80, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH40);
+        CH40.setBounds(30, 740, 80, 80);
+
+        CH11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH11MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH11MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH11Layout = new javax.swing.GroupLayout(CH11);
+        CH11.setLayout(CH11Layout);
+        CH11Layout.setHorizontalGroup(
+            CH11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH11Layout.setVerticalGroup(
+            CH11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH11);
+        CH11.setBounds(0, 670, 110, 70);
+
+        CH12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH12MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH12MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH12Layout = new javax.swing.GroupLayout(CH12);
+        CH12.setLayout(CH12Layout);
+        CH12Layout.setHorizontalGroup(
+            CH12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH12Layout.setVerticalGroup(
+            CH12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH12);
+        CH12.setBounds(0, 600, 110, 70);
+
+        CH13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH13MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH13MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH13Layout = new javax.swing.GroupLayout(CH13);
+        CH13.setLayout(CH13Layout);
+        CH13Layout.setHorizontalGroup(
+            CH13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH13Layout.setVerticalGroup(
+            CH13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH13);
+        CH13.setBounds(0, 530, 110, 70);
+
+        CH14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH14MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH14MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH14Layout = new javax.swing.GroupLayout(CH14);
+        CH14.setLayout(CH14Layout);
+        CH14Layout.setHorizontalGroup(
+            CH14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH14Layout.setVerticalGroup(
+            CH14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH14);
+        CH14.setBounds(0, 460, 110, 70);
+
+        CH15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH15MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH15MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH15Layout = new javax.swing.GroupLayout(CH15);
+        CH15.setLayout(CH15Layout);
+        CH15Layout.setHorizontalGroup(
+            CH15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH15Layout.setVerticalGroup(
+            CH15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH15);
+        CH15.setBounds(0, 390, 110, 70);
+
+        CH16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH16MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH16MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH16Layout = new javax.swing.GroupLayout(CH16);
+        CH16.setLayout(CH16Layout);
+        CH16Layout.setHorizontalGroup(
+            CH16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH16Layout.setVerticalGroup(
+            CH16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH16);
+        CH16.setBounds(0, 320, 110, 70);
+
+        CH17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH17MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH17MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH17Layout = new javax.swing.GroupLayout(CH17);
+        CH17.setLayout(CH17Layout);
+        CH17Layout.setHorizontalGroup(
+            CH17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH17Layout.setVerticalGroup(
+            CH17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH17);
+        CH17.setBounds(0, 250, 110, 70);
+
+        CH18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH18MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH18MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH18Layout = new javax.swing.GroupLayout(CH18);
+        CH18.setLayout(CH18Layout);
+        CH18Layout.setHorizontalGroup(
+            CH18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH18Layout.setVerticalGroup(
+            CH18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH18);
+        CH18.setBounds(0, 180, 110, 70);
+
+        CH19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH19MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH19MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH19Layout = new javax.swing.GroupLayout(CH19);
+        CH19.setLayout(CH19Layout);
+        CH19Layout.setHorizontalGroup(
+            CH19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH19Layout.setVerticalGroup(
+            CH19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH19);
+        CH19.setBounds(0, 110, 110, 70);
+
+        CH20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH20MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH20MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH20Layout = new javax.swing.GroupLayout(CH20);
+        CH20.setLayout(CH20Layout);
+        CH20Layout.setHorizontalGroup(
+            CH20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH20Layout.setVerticalGroup(
+            CH20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH20);
+        CH20.setBounds(0, 0, 110, 110);
+
+        CH21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH21MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH21MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH21Layout = new javax.swing.GroupLayout(CH21);
+        CH21.setLayout(CH21Layout);
+        CH21Layout.setHorizontalGroup(
+            CH21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH21Layout.setVerticalGroup(
+            CH21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH21);
+        CH21.setBounds(110, 0, 70, 110);
+
+        CH22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH22MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH22MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH22Layout = new javax.swing.GroupLayout(CH22);
+        CH22.setLayout(CH22Layout);
+        CH22Layout.setHorizontalGroup(
+            CH22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH22Layout.setVerticalGroup(
+            CH22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH22);
+        CH22.setBounds(180, 0, 70, 110);
+
+        CH23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH23MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH23MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH23Layout = new javax.swing.GroupLayout(CH23);
+        CH23.setLayout(CH23Layout);
+        CH23Layout.setHorizontalGroup(
+            CH23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH23Layout.setVerticalGroup(
+            CH23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH23);
+        CH23.setBounds(250, 0, 70, 110);
+
+        CH24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH24MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH24MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH24Layout = new javax.swing.GroupLayout(CH24);
+        CH24.setLayout(CH24Layout);
+        CH24Layout.setHorizontalGroup(
+            CH24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH24Layout.setVerticalGroup(
+            CH24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH24);
+        CH24.setBounds(320, 0, 70, 110);
+
+        CH25.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH25MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH25MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH25Layout = new javax.swing.GroupLayout(CH25);
+        CH25.setLayout(CH25Layout);
+        CH25Layout.setHorizontalGroup(
+            CH25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH25Layout.setVerticalGroup(
+            CH25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH25);
+        CH25.setBounds(390, 0, 70, 110);
+
+        CH26.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH26MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH26MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH26Layout = new javax.swing.GroupLayout(CH26);
+        CH26.setLayout(CH26Layout);
+        CH26Layout.setHorizontalGroup(
+            CH26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH26Layout.setVerticalGroup(
+            CH26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH26);
+        CH26.setBounds(460, 0, 70, 110);
+
+        CH27.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH27MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH27MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH27Layout = new javax.swing.GroupLayout(CH27);
+        CH27.setLayout(CH27Layout);
+        CH27Layout.setHorizontalGroup(
+            CH27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH27Layout.setVerticalGroup(
+            CH27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH27);
+        CH27.setBounds(530, 0, 70, 110);
+
+        CH28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH28MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH28MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH28Layout = new javax.swing.GroupLayout(CH28);
+        CH28.setLayout(CH28Layout);
+        CH28Layout.setHorizontalGroup(
+            CH28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH28Layout.setVerticalGroup(
+            CH28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH28);
+        CH28.setBounds(600, 0, 70, 110);
+
+        CH29.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH29MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH29MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH29Layout = new javax.swing.GroupLayout(CH29);
+        CH29.setLayout(CH29Layout);
+        CH29Layout.setHorizontalGroup(
+            CH29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        CH29Layout.setVerticalGroup(
+            CH29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH29);
+        CH29.setBounds(670, 0, 70, 110);
+
+        CH30.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH30MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH30MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH30Layout = new javax.swing.GroupLayout(CH30);
+        CH30.setLayout(CH30Layout);
+        CH30Layout.setHorizontalGroup(
+            CH30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH30Layout.setVerticalGroup(
+            CH30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH30);
+        CH30.setBounds(740, 0, 110, 110);
+
+        CH31.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH31MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH31MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH31Layout = new javax.swing.GroupLayout(CH31);
+        CH31.setLayout(CH31Layout);
+        CH31Layout.setHorizontalGroup(
+            CH31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH31Layout.setVerticalGroup(
+            CH31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH31);
+        CH31.setBounds(740, 110, 110, 70);
+
+        CH32.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH32MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH32MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH32Layout = new javax.swing.GroupLayout(CH32);
+        CH32.setLayout(CH32Layout);
+        CH32Layout.setHorizontalGroup(
+            CH32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH32Layout.setVerticalGroup(
+            CH32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH32);
+        CH32.setBounds(740, 180, 110, 70);
+
+        CH33.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH33MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH33MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH33Layout = new javax.swing.GroupLayout(CH33);
+        CH33.setLayout(CH33Layout);
+        CH33Layout.setHorizontalGroup(
+            CH33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH33Layout.setVerticalGroup(
+            CH33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH33);
+        CH33.setBounds(740, 250, 110, 70);
+
+        CH34.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH34MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH34MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH34Layout = new javax.swing.GroupLayout(CH34);
+        CH34.setLayout(CH34Layout);
+        CH34Layout.setHorizontalGroup(
+            CH34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH34Layout.setVerticalGroup(
+            CH34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH34);
+        CH34.setBounds(740, 320, 110, 70);
+
+        CH35.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH35MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH35MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH35Layout = new javax.swing.GroupLayout(CH35);
+        CH35.setLayout(CH35Layout);
+        CH35Layout.setHorizontalGroup(
+            CH35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH35Layout.setVerticalGroup(
+            CH35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH35);
+        CH35.setBounds(740, 390, 110, 70);
+
+        CH36.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH36MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH36MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH36Layout = new javax.swing.GroupLayout(CH36);
+        CH36.setLayout(CH36Layout);
+        CH36Layout.setHorizontalGroup(
+            CH36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH36Layout.setVerticalGroup(
+            CH36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH36);
+        CH36.setBounds(740, 460, 110, 70);
+
+        CH37.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH37MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH37MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH37Layout = new javax.swing.GroupLayout(CH37);
+        CH37.setLayout(CH37Layout);
+        CH37Layout.setHorizontalGroup(
+            CH37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH37Layout.setVerticalGroup(
+            CH37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH37);
+        CH37.setBounds(740, 530, 110, 70);
+
+        CH38.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH38MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH38MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH38Layout = new javax.swing.GroupLayout(CH38);
+        CH38.setLayout(CH38Layout);
+        CH38Layout.setHorizontalGroup(
+            CH38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH38Layout.setVerticalGroup(
+            CH38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH38);
+        CH38.setBounds(740, 600, 110, 70);
+
+        CH39.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CH39MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CH39MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CH39Layout = new javax.swing.GroupLayout(CH39);
+        CH39.setLayout(CH39Layout);
+        CH39Layout.setHorizontalGroup(
+            CH39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+        CH39Layout.setVerticalGroup(
+            CH39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        Tablero.add(CH39);
+        CH39.setBounds(740, 670, 110, 70);
 
         getContentPane().add(Tablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 850));
 
@@ -470,106 +1781,6 @@ public class Home extends javax.swing.JFrame {
 
         getContentPane().add(Controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 400, 850));
 
-        Login.setBackground(new java.awt.Color(51, 102, 255));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jPanel2.setBackground(new java.awt.Color(51, 102, 255));
-
-        jLabel4.setFont(new java.awt.Font("Fira Code", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Juego");
-
-        jTextField1.setFont(new java.awt.Font("Fira Code", 0, 14)); // NOI18N
-        jTextField1.setText("Direccion IP");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        BotonLogin.setBackground(new java.awt.Color(153, 153, 153));
-        BotonLogin.setFont(new java.awt.Font("Fira Code", 0, 18)); // NOI18N
-        BotonLogin.setText("Ingresar");
-        BotonLogin.setBorder(null);
-        BotonLogin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                BotonLoginMousePressed(evt);
-            }
-        });
-        BotonLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonLoginActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(234, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(BotonLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(209, 209, 209))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BotonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
-        );
-
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loginMonopoly1.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(316, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(279, 279, 279))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
-        Login.setLayout(LoginLayout);
-        LoginLayout.setHorizontalGroup(
-            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LoginLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        LoginLayout.setVerticalGroup(
-            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LoginLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 850));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -617,6 +1828,9 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BotonDadosMousePressed
 
+    /*
+        BOTON COMPRA
+    */
     private void BotonComprarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonComprarMouseEntered
         // TODO add your handling code here:
         setColor(BotonComprar);
@@ -630,9 +1844,19 @@ public class Home extends javax.swing.JFrame {
     private void BotonComprarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonComprarMousePressed
         // TODO add your handling code here:
         setColor2(BotonComprar);
-        Carta.setVisible(false);
+        try {
+            _out.writeInt(3);                               // Mensaje enviado, desea comprar la casilla donde esta parado
+            System.out.println(_input.readInt());          // Recepcion de la posicion donde cae el usuario
+            _out.writeInt(15);                              // Mensaje enviado, solicitando balance actual
+            System.out.println(_input.readInt());          // 
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_BotonComprarMousePressed
 
+    /*
+        BOTON VENTA
+    */
     private void BotonVenderMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonVenderMouseEntered
         // TODO add your handling code here:
         setColor(BotonVender);
@@ -646,9 +1870,20 @@ public class Home extends javax.swing.JFrame {
     private void BotonVenderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonVenderMousePressed
         // TODO add your handling code here:
         setColor2(BotonVender);
+        try {
+            _out.writeInt(4);                               // Mensaje enviado, desea vender la casilla indicada
+            System.out.println(_input.readInt());          // Recepcion de la posicion donde cae el usuario
+            _out.writeInt(15);                              // Mensaje enviado, solicitando balance actual
+            System.out.println(_input.readInt());          // 
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_BotonVenderMousePressed
 
+    /*
+        BOTON FIN TURNO
+    */
     private void BotonFinTurnoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonFinTurnoMouseEntered
         // TODO add your handling code here:
         setColor(BotonFinTurno);
@@ -662,8 +1897,16 @@ public class Home extends javax.swing.JFrame {
     private void BotonFinTurnoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonFinTurnoMousePressed
         // TODO add your handling code here:
         setColor2(BotonFinTurno);
+        PiezaCarro.setLocation(127, 20);
+        try {
+            _out.writeInt(7);                               // Mensaje enviado, indica fin de turno
+            //System.out.println(_input.readInt());          // Recepcion de la posicion donde cae el usuario
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_BotonFinTurnoMousePressed
 
+       
     private void BotonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BotonLoginActionPerformed
@@ -671,11 +1914,432 @@ public class Home extends javax.swing.JFrame {
     private void BotonLoginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonLoginMousePressed
         // TODO add your handling code here:
         Login.setVisible(false);
+        _conn = new Conexion(IPlogin.getText());
+        _conn.initClient(); 
+        _out = _conn.getOut();
+        _input = _conn.getInput();
+        
+       Tablero.setVisible(true);
+       Controles.setVisible(true);
     }//GEN-LAST:event_BotonLoginMousePressed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void IPloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IPloginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_IPloginActionPerformed
+
+    /*
+        CARTAS VISIBILIDAD
+    */
+    
+    private void CH2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH2MouseEntered
+        // TODO add your handling code here:
+        Carta2.setVisible(true);
+    }//GEN-LAST:event_CH2MouseEntered
+
+    private void CH2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH2MouseExited
+        // TODO add your handling code here:
+        Carta2.setVisible(false);
+    }//GEN-LAST:event_CH2MouseExited
+
+    private void CH0MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH0MouseEntered
+        // TODO add your handling code here:
+        Carta0.setVisible(true);
+    }//GEN-LAST:event_CH0MouseEntered
+
+    private void CH0MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH0MouseExited
+        // TODO add your handling code here:
+        Carta0.setVisible(false);
+    }//GEN-LAST:event_CH0MouseExited
+
+    private void CH1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH1MouseEntered
+        // TODO add your handling code here:
+        Carta1.setVisible(true);
+    }//GEN-LAST:event_CH1MouseEntered
+
+    private void CH1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH1MouseExited
+        // TODO add your handling code here:
+        Carta1.setVisible(false);
+    }//GEN-LAST:event_CH1MouseExited
+
+    private void CH3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH3MouseEntered
+        // TODO add your handling code here:
+        Carta3.setVisible(true);
+    }//GEN-LAST:event_CH3MouseEntered
+
+    private void CH3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH3MouseExited
+        // TODO add your handling code here:
+        Carta3.setVisible(false);
+    }//GEN-LAST:event_CH3MouseExited
+
+    private void CH4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH4MouseEntered
+        // TODO add your handling code here:
+        Carta4.setVisible(true);
+    }//GEN-LAST:event_CH4MouseEntered
+
+    private void CH4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH4MouseExited
+        // TODO add your handling code here:
+        Carta4.setVisible(false);
+    }//GEN-LAST:event_CH4MouseExited
+
+    private void CH5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH5MouseEntered
+        // TODO add your handling code here:
+        Carta5.setVisible(true);
+    }//GEN-LAST:event_CH5MouseEntered
+
+    private void CH5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH5MouseExited
+        // TODO add your handling code here:
+        Carta5.setVisible(false);
+    }//GEN-LAST:event_CH5MouseExited
+
+    private void CH6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH6MouseEntered
+        // TODO add your handling code here:
+        Carta6.setVisible(true);
+    }//GEN-LAST:event_CH6MouseEntered
+
+    private void CH6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH6MouseExited
+        // TODO add your handling code here:
+        Carta6.setVisible(false);
+    }//GEN-LAST:event_CH6MouseExited
+
+    private void CH7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH7MouseEntered
+        // TODO add your handling code here:
+        Carta7.setVisible(true);
+    }//GEN-LAST:event_CH7MouseEntered
+
+    private void CH7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH7MouseExited
+        // TODO add your handling code here:
+        Carta7.setVisible(false);
+    }//GEN-LAST:event_CH7MouseExited
+
+    private void CH8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH8MouseEntered
+        // TODO add your handling code here:
+        Carta8.setVisible(true);
+    }//GEN-LAST:event_CH8MouseEntered
+
+    private void CH8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH8MouseExited
+        // TODO add your handling code here:
+        Carta8.setVisible(false);
+    }//GEN-LAST:event_CH8MouseExited
+
+    private void CH9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH9MouseEntered
+        // TODO add your handling code here:
+        Carta9.setVisible(true);
+    }//GEN-LAST:event_CH9MouseEntered
+
+    private void CH9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH9MouseExited
+        // TODO add your handling code here:
+        Carta9.setVisible(false);
+    }//GEN-LAST:event_CH9MouseExited
+
+    private void CH10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH10MouseEntered
+        // TODO add your handling code here:
+        Carta10.setVisible(true);
+    }//GEN-LAST:event_CH10MouseEntered
+
+    private void CH10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH10MouseExited
+        // TODO add your handling code here:
+        Carta10.setVisible(false);
+    }//GEN-LAST:event_CH10MouseExited
+
+    private void CH40MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH40MouseEntered
+        // TODO add your handling code here:
+        Carta40.setVisible(true);
+    }//GEN-LAST:event_CH40MouseEntered
+
+    private void CH40MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH40MouseExited
+        // TODO add your handling code here:
+        Carta40.setVisible(false);
+    }//GEN-LAST:event_CH40MouseExited
+
+    private void CH11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH11MouseEntered
+        // TODO add your handling code here:
+        Carta11.setVisible(true);
+    }//GEN-LAST:event_CH11MouseEntered
+
+    private void CH11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH11MouseExited
+        // TODO add your handling code here:
+        Carta11.setVisible(false);
+    }//GEN-LAST:event_CH11MouseExited
+
+    private void CH12MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH12MouseEntered
+        // TODO add your handling code here:
+        Carta12.setVisible(true);
+    }//GEN-LAST:event_CH12MouseEntered
+
+    private void CH12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH12MouseExited
+        // TODO add your handling code here:
+        Carta12.setVisible(false);
+    }//GEN-LAST:event_CH12MouseExited
+
+    private void CH13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH13MouseEntered
+        // TODO add your handling code here:
+        Carta13.setVisible(true);
+    }//GEN-LAST:event_CH13MouseEntered
+
+    private void CH13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH13MouseExited
+        // TODO add your handling code here:
+        Carta13.setVisible(false);
+    }//GEN-LAST:event_CH13MouseExited
+
+    private void CH14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH14MouseEntered
+        // TODO add your handling code here:
+        Carta14.setVisible(true);
+    }//GEN-LAST:event_CH14MouseEntered
+    
+    private void CH14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH14MouseExited
+        // TODO add your handling code here:
+        Carta14.setVisible(false);
+    }//GEN-LAST:event_CH14MouseExited
+
+    private void CH15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH15MouseEntered
+        // TODO add your handling code here:
+        Carta15.setVisible(true);
+    }//GEN-LAST:event_CH15MouseEntered
+
+    private void CH15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH15MouseExited
+        // TODO add your handling code here:
+        Carta15.setVisible(false);
+    }//GEN-LAST:event_CH15MouseExited
+
+    private void CH16MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH16MouseEntered
+        // TODO add your handling code here:
+        Carta16.setVisible(true);
+    }//GEN-LAST:event_CH16MouseEntered
+
+    private void CH16MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH16MouseExited
+        // TODO add your handling code here:
+        Carta16.setVisible(false);
+    }//GEN-LAST:event_CH16MouseExited
+
+    private void CH17MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH17MouseEntered
+        // TODO add your handling code here:
+        Carta17.setVisible(true);
+    }//GEN-LAST:event_CH17MouseEntered
+
+    private void CH17MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH17MouseExited
+        // TODO add your handling code here:
+        Carta17.setVisible(false);
+    }//GEN-LAST:event_CH17MouseExited
+
+    private void CH18MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH18MouseEntered
+        // TODO add your handling code here:
+        Carta18.setVisible(true);
+    }//GEN-LAST:event_CH18MouseEntered
+
+    private void CH18MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH18MouseExited
+        // TODO add your handling code here:
+        Carta18.setVisible(false);
+    }//GEN-LAST:event_CH18MouseExited
+
+    private void CH19MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH19MouseEntered
+        // TODO add your handling code here:
+        Carta19.setVisible(true);
+    }//GEN-LAST:event_CH19MouseEntered
+
+    private void CH19MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH19MouseExited
+        // TODO add your handling code here:
+        Carta19.setVisible(false);
+    }//GEN-LAST:event_CH19MouseExited
+
+    private void CH20MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH20MouseEntered
+        // TODO add your handling code here:
+        Carta20.setVisible(true);
+    }//GEN-LAST:event_CH20MouseEntered
+
+    private void CH20MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH20MouseExited
+        // TODO add your handling code here:
+        Carta20.setVisible(false);
+    }//GEN-LAST:event_CH20MouseExited
+
+    private void CH21MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH21MouseEntered
+        // TODO add your handling code here:
+        Carta21.setVisible(true);
+    }//GEN-LAST:event_CH21MouseEntered
+
+    private void CH21MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH21MouseExited
+        // TODO add your handling code here:
+        Carta21.setVisible(false);
+    }//GEN-LAST:event_CH21MouseExited
+
+    private void CH22MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH22MouseEntered
+        // TODO add your handling code here:
+        Carta22.setVisible(true);
+    }//GEN-LAST:event_CH22MouseEntered
+
+    private void CH22MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH22MouseExited
+        // TODO add your handling code here:
+        Carta22.setVisible(false);
+    }//GEN-LAST:event_CH22MouseExited
+
+    private void CH23MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH23MouseEntered
+        // TODO add your handling code here:
+        Carta23.setVisible(true);
+    }//GEN-LAST:event_CH23MouseEntered
+
+    private void CH23MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH23MouseExited
+        // TODO add your handling code here:
+        Carta23.setVisible(false);
+    }//GEN-LAST:event_CH23MouseExited
+
+    private void CH24MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH24MouseEntered
+        // TODO add your handling code here:
+        Carta24.setVisible(true);
+    }//GEN-LAST:event_CH24MouseEntered
+
+    private void CH24MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH24MouseExited
+        // TODO add your handling code here:
+        Carta24.setVisible(false);
+    }//GEN-LAST:event_CH24MouseExited
+
+    private void CH25MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH25MouseEntered
+        // TODO add your handling code here:
+        Carta25.setVisible(true);
+    }//GEN-LAST:event_CH25MouseEntered
+
+    private void CH25MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH25MouseExited
+        // TODO add your handling code here:
+        Carta25.setVisible(false);
+    }//GEN-LAST:event_CH25MouseExited
+
+    private void CH26MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH26MouseEntered
+        // TODO add your handling code here:
+        Carta26.setVisible(true);
+    }//GEN-LAST:event_CH26MouseEntered
+
+    private void CH26MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH26MouseExited
+        // TODO add your handling code here:
+        Carta26.setVisible(false);
+    }//GEN-LAST:event_CH26MouseExited
+
+    private void CH27MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH27MouseEntered
+        // TODO add your handling code here:
+        Carta27.setVisible(true);
+    }//GEN-LAST:event_CH27MouseEntered
+
+    private void CH27MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH27MouseExited
+        // TODO add your handling code here:
+        Carta27.setVisible(false);
+    }//GEN-LAST:event_CH27MouseExited
+
+    private void CH28MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH28MouseEntered
+        // TODO add your handling code here:
+        Carta28.setVisible(true);
+    }//GEN-LAST:event_CH28MouseEntered
+
+    private void CH28MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH28MouseExited
+        // TODO add your handling code here:
+        Carta28.setVisible(false);
+    }//GEN-LAST:event_CH28MouseExited
+
+    private void CH29MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH29MouseEntered
+        // TODO add your handling code here:
+        Carta29.setVisible(true);
+    }//GEN-LAST:event_CH29MouseEntered
+
+    private void CH29MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH29MouseExited
+        // TODO add your handling code here:
+        Carta29.setVisible(false);
+    }//GEN-LAST:event_CH29MouseExited
+
+    private void CH30MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH30MouseEntered
+        // TODO add your handling code here:
+        Carta30.setVisible(true);
+    }//GEN-LAST:event_CH30MouseEntered
+
+    private void CH30MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH30MouseExited
+        // TODO add your handling code here:
+        Carta30.setVisible(false);
+    }//GEN-LAST:event_CH30MouseExited
+
+    private void CH31MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH31MouseEntered
+        // TODO add your handling code here:
+        Carta31.setVisible(true);
+    }//GEN-LAST:event_CH31MouseEntered
+
+    private void CH31MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH31MouseExited
+        // TODO add your handling code here:
+        Carta31.setVisible(false);
+    }//GEN-LAST:event_CH31MouseExited
+
+    private void CH32MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH32MouseEntered
+        // TODO add your handling code here:
+        Carta32.setVisible(true);
+    }//GEN-LAST:event_CH32MouseEntered
+
+    private void CH32MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH32MouseExited
+        // TODO add your handling code here:
+        Carta32.setVisible(false);
+    }//GEN-LAST:event_CH32MouseExited
+
+    private void CH33MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH33MouseEntered
+        // TODO add your handling code here:
+        Carta33.setVisible(true);
+    }//GEN-LAST:event_CH33MouseEntered
+
+    private void CH33MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH33MouseExited
+        // TODO add your handling code here:
+        Carta33.setVisible(false);
+    }//GEN-LAST:event_CH33MouseExited
+
+    private void CH34MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH34MouseEntered
+        // TODO add your handling code here:
+        Carta34.setVisible(true);
+    }//GEN-LAST:event_CH34MouseEntered
+
+    private void CH34MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH34MouseExited
+        // TODO add your handling code here:
+        Carta34.setVisible(false);
+    }//GEN-LAST:event_CH34MouseExited
+
+    private void CH35MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH35MouseEntered
+        // TODO add your handling code here:
+        Carta35.setVisible(true);
+    }//GEN-LAST:event_CH35MouseEntered
+
+    private void CH35MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH35MouseExited
+        // TODO add your handling code here:
+        Carta35.setVisible(false);
+    }//GEN-LAST:event_CH35MouseExited
+
+    private void CH36MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH36MouseEntered
+        // TODO add your handling code here:
+        Carta36.setVisible(true);
+    }//GEN-LAST:event_CH36MouseEntered
+
+    private void CH36MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH36MouseExited
+        // TODO add your handling code here:
+        Carta36.setVisible(false);
+    }//GEN-LAST:event_CH36MouseExited
+
+    private void CH37MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH37MouseEntered
+        // TODO add your handling code here:
+        Carta37.setVisible(true);
+    }//GEN-LAST:event_CH37MouseEntered
+
+    private void CH37MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH37MouseExited
+        // TODO add your handling code here:
+        Carta37.setVisible(false);
+    }//GEN-LAST:event_CH37MouseExited
+
+    private void CH38MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH38MouseEntered
+        // TODO add your handling code here:
+        Carta38.setVisible(true);
+    }//GEN-LAST:event_CH38MouseEntered
+
+    private void CH38MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH38MouseExited
+        // TODO add your handling code here:
+        Carta38.setVisible(false);
+    }//GEN-LAST:event_CH38MouseExited
+
+    private void CH39MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH39MouseEntered
+        // TODO add your handling code here:
+        Carta39.setVisible(true);
+    }//GEN-LAST:event_CH39MouseEntered
+
+    private void CH39MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CH39MouseExited
+        // TODO add your handling code here:
+        Carta39.setVisible(false);
+    }//GEN-LAST:event_CH39MouseExited
 
     
     
@@ -752,12 +2416,94 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel BotonFinTurno;
     private javax.swing.JButton BotonLogin;
     private javax.swing.JPanel BotonVender;
-    private javax.swing.JLabel Carta;
+    private javax.swing.JPanel CH0;
+    private javax.swing.JPanel CH1;
+    private javax.swing.JPanel CH10;
+    private javax.swing.JPanel CH11;
+    private javax.swing.JPanel CH12;
+    private javax.swing.JPanel CH13;
+    private javax.swing.JPanel CH14;
+    private javax.swing.JPanel CH15;
+    private javax.swing.JPanel CH16;
+    private javax.swing.JPanel CH17;
+    private javax.swing.JPanel CH18;
+    private javax.swing.JPanel CH19;
+    private javax.swing.JPanel CH2;
+    private javax.swing.JPanel CH20;
+    private javax.swing.JPanel CH21;
+    private javax.swing.JPanel CH22;
+    private javax.swing.JPanel CH23;
+    private javax.swing.JPanel CH24;
+    private javax.swing.JPanel CH25;
+    private javax.swing.JPanel CH26;
+    private javax.swing.JPanel CH27;
+    private javax.swing.JPanel CH28;
+    private javax.swing.JPanel CH29;
+    private javax.swing.JPanel CH3;
+    private javax.swing.JPanel CH30;
+    private javax.swing.JPanel CH31;
+    private javax.swing.JPanel CH32;
+    private javax.swing.JPanel CH33;
+    private javax.swing.JPanel CH34;
+    private javax.swing.JPanel CH35;
+    private javax.swing.JPanel CH36;
+    private javax.swing.JPanel CH37;
+    private javax.swing.JPanel CH38;
+    private javax.swing.JPanel CH39;
+    private javax.swing.JPanel CH4;
+    private javax.swing.JPanel CH40;
+    private javax.swing.JPanel CH5;
+    private javax.swing.JPanel CH6;
+    private javax.swing.JPanel CH7;
+    private javax.swing.JPanel CH8;
+    private javax.swing.JPanel CH9;
+    private javax.swing.JLabel Carta0;
+    private javax.swing.JLabel Carta1;
+    private javax.swing.JLabel Carta10;
+    private javax.swing.JLabel Carta11;
+    private javax.swing.JLabel Carta12;
+    private javax.swing.JLabel Carta13;
+    private javax.swing.JLabel Carta14;
+    private javax.swing.JLabel Carta15;
+    private javax.swing.JLabel Carta16;
+    private javax.swing.JLabel Carta17;
+    private javax.swing.JLabel Carta18;
+    private javax.swing.JLabel Carta19;
+    private javax.swing.JLabel Carta2;
+    private javax.swing.JLabel Carta20;
+    private javax.swing.JLabel Carta21;
+    private javax.swing.JLabel Carta22;
+    private javax.swing.JLabel Carta23;
+    private javax.swing.JLabel Carta24;
+    private javax.swing.JLabel Carta25;
+    private javax.swing.JLabel Carta26;
+    private javax.swing.JLabel Carta27;
+    private javax.swing.JLabel Carta28;
+    private javax.swing.JLabel Carta29;
+    private javax.swing.JLabel Carta3;
+    private javax.swing.JLabel Carta30;
+    private javax.swing.JLabel Carta31;
+    private javax.swing.JLabel Carta32;
+    private javax.swing.JLabel Carta33;
+    private javax.swing.JLabel Carta34;
+    private javax.swing.JLabel Carta35;
+    private javax.swing.JLabel Carta36;
+    private javax.swing.JLabel Carta37;
+    private javax.swing.JLabel Carta38;
+    private javax.swing.JLabel Carta39;
+    private javax.swing.JLabel Carta4;
+    private javax.swing.JLabel Carta40;
+    private javax.swing.JLabel Carta5;
+    private javax.swing.JLabel Carta6;
+    private javax.swing.JLabel Carta7;
+    private javax.swing.JLabel Carta8;
+    private javax.swing.JLabel Carta9;
     private javax.swing.JLabel Casa1;
     private javax.swing.JLabel Casa2;
     private javax.swing.JLabel Casa3;
     private javax.swing.JLabel Cash;
     private javax.swing.JPanel Controles;
+    private javax.swing.JTextField IPlogin;
     private javax.swing.JLabel ImagenTablero;
     private javax.swing.JLabel Jugador;
     private javax.swing.JPanel Login;
@@ -788,6 +2534,5 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
