@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
+import java.io.ByteArrayOutputStream;
 
 /**
  *
@@ -631,6 +632,24 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor2(BotonComprar);
         Carta.setVisible(false);
+        
+        try {
+            _out.writeInt(4);                               // Mensaje enviado, propiedad actual
+            System.out.println(_input.readInt());          // Recepcion de la propiedad en la que se encuentra el usuario
+            _out.writeInt(15);                               // Mensaje enviado solicitando balance actual
+            System.out.println(_input.readInt());          // Recepcion del balance del usuario
+            	ByteArrayOutputStream bArrOutStrem = new ByteArrayOutputStream();
+		byte[] buffer = new byte[1024];
+		int length;
+		while ((length = _input.read(buffer)) != -1) {
+			bArrOutStrem.write(buffer, 0, length);
+		}
+		String balanceSaldo = bArrOutStrem.toString("UTF-8");
+            _out.writeInt(3);                              // Mensaje enviado, propiedad comprada
+            System.out.println(_input.readInt());          // Recepcion de la propiedad comprada por el usuario
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_BotonComprarMousePressed
 
     private void BotonVenderMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonVenderMouseEntered
@@ -646,6 +665,15 @@ public class Home extends javax.swing.JFrame {
     private void BotonVenderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonVenderMousePressed
         // TODO add your handling code here:
         setColor2(BotonVender);
+        
+       try {
+            _out.writeInt(4);                               // Mensaje enviado, propiedad vendida
+            System.out.println(_input.readInt());          // Recepcion de la propiedad vendida por el usuario
+            _out.writeInt(15);                              // Mensaje enviado, solicitando balance actual
+            System.out.println(_input.readInt());          // Recepcion del valor de la propiedad vendida por el usuario
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_BotonVenderMousePressed
 
