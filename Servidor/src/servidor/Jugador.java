@@ -27,7 +27,7 @@ public class Jugador {
             jugador.setSaldo( jugador.getSaldo()- casilla.getPrecio());
             casilla.setDueño(jugador.getNroJugador());
         }else{
-            msg = 39;
+            msg = -1;
         }
         return msg;
     }
@@ -41,12 +41,12 @@ public class Jugador {
             casilla.setCasa(false);// LIBERO HOTEL
             jugador.setSaldo(jugador.getSaldo()+ (casilla.getPrecio()/2) );//RETORNO LA MITAD DEL DINERO DE LO QUE INICIALMENTE VALIA LA PROPIEDAD            
         }else
-            msg=36;
+            msg=-1;
         return msg;
     }
     
     public int ComprarCasa(Jugador jugador, Tablero tablero){
-        int msg = 35;
+        int msg = -1;
         Casilla casilla = tablero.getTablero().get(jugador.getPos());
         Casilla casilla1 = tablero.getTablero().get(casilla.getConjunto1());
         if(jugador.getPos() != 39 && jugador.getPos() != 37 && jugador.getPos() != 3 && jugador.getPos() != 1){
@@ -68,7 +68,7 @@ public class Jugador {
     }
     
     public int ComprarHotel(Jugador jugador, Tablero tablero){
-        int msg = 34;
+        int msg = -1;
             Casilla casilla = tablero.getTablero().get(jugador.getPos());
             Casilla casilla1 = tablero.getTablero().get(casilla.getConjunto1());
             if(jugador.getPos() != 39 && jugador.getPos() != 37 && jugador.getPos() != 3 && jugador.getPos() != 1){
