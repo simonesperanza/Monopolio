@@ -111,12 +111,14 @@ public class Servidor {
     }
 
     
-    public int jugar(int mensaje, Jugador jugador, DataOutputStream output) throws IOException{
+    public void jugar(int mensaje, Jugador jugador, DataOutputStream output) throws IOException{
         int respuesta = 0;
         switch (mensaje){
             //Mover ficha
-            case 1: System.out.println("Fin de turno del jugador "+jugador.getNroJugador());
-                    break;
+            case 1: 
+                //ENTRO SOLO PARA SALIR, FIN DE TURNO
+                System.out.println("Fin de turno del jugador "+jugador.getNroJugador());
+                break;
             case 2 :
                 //LANZO EL DADO Y ACTUALIZO LA POSICION DEL JUGADOR 
                 int pasos = lanzarDado(); //Guardo la cantidad de pasos a moverme
@@ -127,36 +129,44 @@ public class Servidor {
                 //ComprobarCasilla(jugador); ENVIO A COMPROBAR LA CASILLA
                 output.writeInt(jugador.getPos());
                 break;
+            case 15:
+                //EL CLIENTE SOLICITA SU SALDO
+                output.writeInt(Math.round(jugador.getSaldo()));
+                break;
             case 30:
                 //EL CLIENTE SELECCIONO LA OPCION DE COMPRAR CASILLA
                 System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
                 respuesta = jugador.ComprarCasilla(jugador, _tablero);
                 System.out.println("CONTROL - Saldo Final: "+jugador.getSaldo());
+                output.writeInt(respuesta);
                 break;
             case 31:
                 //EL CLIENTE SELECCIONA LA OPCION DE VENDER CASILLA
                 System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
                 respuesta = jugador.VenderCasilla(jugador, _tablero);
                 System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
+                output.writeInt(respuesta);
                 break;
             case 32:
                 //EL CLIENTE SELECCIONA LA OPCION DE COMPRAR CASA
                 System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
                 respuesta = jugador.ComprarCasa(jugador, _tablero);
                 System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
+                output.writeInt(respuesta);
                 break;
             case 33:
                 //EL CLIENTE SELECCIONA LA OPCION DE COMPRAR HOTEL
                 System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
                 respuesta = jugador.ComprarHotel(jugador, _tablero);
                 System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
+                output.writeInt(respuesta);
                 break;
-            case 40: output.writeInt(jugador.getNroJugador());
-                    break;
+            case 40:
+                // OPCION PARA DEVOLVER QUE NUMERO DE JUGADOR SOY
+                output.writeInt(jugador.getNroJugador());
+                break;
                 
-        }
-        return respuesta;
-        
+        }        
     }
     
     public int lanzarDado(){
