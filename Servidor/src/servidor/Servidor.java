@@ -119,53 +119,56 @@ public class Servidor {
                 //ENTRO SOLO PARA SALIR, FIN DE TURNO
                 System.out.println("Fin de turno del jugador "+jugador.getNroJugador());
                 break;
-            case 2 :
-                //LANZO EL DADO Y ACTUALIZO LA POSICION DEL JUGADOR 
-                int pasos = lanzarDado(); //Guardo la cantidad de pasos a moverme
-                System.out.println("CONTROL - Posicion Inicial: "+jugador.getPos());
-                jugador.ActualizarPosicion(pasos, jugador);
-                System.out.println("CONTROL - Posicion Final: "+jugador.getPos());
-                System.out.println("CONTROL - SALDO: "+jugador.getSaldo());
-                //ComprobarCasilla(jugador); ENVIO A COMPROBAR LA CASILLA
-                output.writeInt(jugador.getPos());
-                break;
-            case 15:
-                //EL CLIENTE SOLICITA SU SALDO
-                output.writeInt(Math.round(jugador.getSaldo()));
-                break;
-            case 30:
-                //EL CLIENTE SELECCIONO LA OPCION DE COMPRAR CASILLA
-                System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
-                respuesta = jugador.ComprarCasilla(jugador, _tablero);
-                System.out.println("CONTROL - Saldo Final: "+jugador.getSaldo());
-                output.writeInt(respuesta);
-                break;
-            case 31:
-                //EL CLIENTE SELECCIONA LA OPCION DE VENDER CASILLA
-                System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
-                respuesta = jugador.VenderCasilla(jugador, _tablero);
-                System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
-                output.writeInt(respuesta);
-                break;
-            case 32:
-                //EL CLIENTE SELECCIONA LA OPCION DE COMPRAR CASA
-                System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
-                respuesta = jugador.ComprarCasa(jugador, _tablero);
-                System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
-                output.writeInt(respuesta);
-                break;
-            case 33:
-                //EL CLIENTE SELECCIONA LA OPCION DE COMPRAR HOTEL
-                System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
-                respuesta = jugador.ComprarHotel(jugador, _tablero);
-                System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
-                output.writeInt(respuesta);
-                break;
-            case 40:
-                // OPCION PARA DEVOLVER QUE NUMERO DE JUGADOR SOY
-                output.writeInt(jugador.getNroJugador());
-                break;
-                
+            case 2 ://LANZO EL DADO Y ACTUALIZO LA POSICION DEL JUGADOR 
+                    int pasos = lanzarDado(); //Guardo la cantidad de pasos a moverme
+                    System.out.println("Valor de los dados: "+pasos);
+                    jugador.ActualizarPosicion(pasos, jugador);
+                    System.out.println("Saldo: "+jugador.getSaldo());
+                    //ComprobarCasilla(jugador); ENVIO A COMPROBAR LA CASILLA
+                    output.writeInt(jugador.getPos());
+                    break;
+            case 15://EL CLIENTE SOLICITA SU SALDO
+                    output.writeInt(Math.round(jugador.getSaldo()));
+                    break;
+            case 16://SOLICITAR POSICION DEL JUGADOR 1
+                    output.writeInt(jugador1.getPos());
+                    break;
+            case 17://SOLICITAR POSICION DEL JUGADOR 2
+                    output.writeInt(jugador2.getPos());
+                    break;
+            case 18://SOLICITAR POSICION DEL JUGADOR 3
+                    output.writeInt(jugador3.getPos());
+                    break;
+            case 19://SOLICITAR POSICION DEL JUGADOR 4
+                    output.writeInt(jugador4.getPos());
+                    break;
+            case 30://EL CLIENTE SELECCIONO LA OPCION DE COMPRAR CASILLA
+                    System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
+                    respuesta = jugador.ComprarCasilla(jugador, _tablero);
+                    System.out.println("CONTROL - Saldo Final: "+jugador.getSaldo());
+                    output.writeInt(respuesta);
+                    break;
+            case 31://EL CLIENTE SELECCIONA LA OPCION DE VENDER CASILLA
+                    System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
+                    respuesta = jugador.VenderCasilla(jugador, _tablero);
+                    System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
+                    output.writeInt(respuesta);
+                    break;
+            case 32://EL CLIENTE SELECCIONA LA OPCION DE COMPRAR CASA
+                    System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
+                    respuesta = jugador.ComprarCasa(jugador, _tablero);
+                    System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
+                    output.writeInt(respuesta);
+                    break;
+            case 33://EL CLIENTE SELECCIONA LA OPCION DE COMPRAR HOTEL
+                    System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
+                    respuesta = jugador.ComprarHotel(jugador, _tablero);
+                    System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
+                    output.writeInt(respuesta);
+                    break;
+            case 40:// OPCION PARA DEVOLVER QUE NUMERO DE JUGADOR SOY
+                    output.writeInt(jugador.getNroJugador());
+                    break;
         }        
     }
     

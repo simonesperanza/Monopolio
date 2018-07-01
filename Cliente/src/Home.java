@@ -1674,12 +1674,12 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(Perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Propiedades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addComponent(Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        getContentPane().add(Controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 400, 640));
+        getContentPane().add(Controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 400, 680));
 
         Login.setBackground(new java.awt.Color(51, 102, 255));
 
@@ -1833,6 +1833,23 @@ public class Home extends javax.swing.JFrame {
                 accion.ActualizarPosicionPieza(PiezaZapato, mensaje);
             }
             
+            for (int i=1; i<=4; i++){
+                int msj = 0;
+                if (nroJugador != i){
+                    _out.writeInt(15+i);
+                    msj = _input.readInt();
+                    if (i == 1){
+                        accion.ActualizarPosicionPieza(PiezaCarro, msj);
+                        } else if (i == 2){
+                            accion.ActualizarPosicionPieza(PiezaBarco, msj);
+                        } else if (i == 3){
+                            accion.ActualizarPosicionPieza(PiezaSombrero, msj);
+                        } else if (i == 4){
+                            accion.ActualizarPosicionPieza(PiezaZapato, msj);
+                    }
+                }
+            }
+            
             /*_out.writeInt(15);                              // Mensaje enviado, solicitando balance actual
             System.out.println(_input.readInt());          // 
             */
@@ -1922,9 +1939,7 @@ public class Home extends javax.swing.JFrame {
         setColor2(BotonFinTurno);
         //PiezaCarro.setLocation(127, 20);
         try {
-            //_out.writeInt(7);                               // Mensaje enviado, indica fin de turno
-            _out.writeInt(1);   
-            //int casillaPos = _input.readInt();          // Recepcion de la posicion donde cae el usuario TESTING
+            _out.writeInt(1);
         } catch (IOException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
