@@ -1598,10 +1598,7 @@ public class Home extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Propiedad", "Casas", "Hoteles", "Renta", "Venta"
@@ -1863,8 +1860,18 @@ public class Home extends javax.swing.JFrame {
             if(mensaje !=-1){
                 //NO HUBO ERROR Y LA PROPIEDAD SE PUDO COMPRAR
                 // PROCEDO A ACTUALIZAR EL JTABLE1 QUE TIENE LA INFORMACION DE LAS PROPIEDADES
-                DefaultTableModel model = new DefaultTableModel();
+                //DefaultTableModel model = new DefaultTableModel();
+                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
                 Tablero tab = new Tablero();
+                model.addRow(new Object[]{tab.getCasillas(pos), "0", "0",
+                String.valueOf(alquiler), String.valueOf(venta)});
+                
+               
+                
+                _out.writeInt(15); // Mensaje enviado solicitando saldo actual
+                mensaje = _input.readInt();
+                jLabel10.setText(String.valueOf(mensaje));
+                /*Tablero tab = new Tablero();
                 Object[] row = new Object[5];
                 row[0] = tab.getCasillas(pos);
                 row[1] = false;
@@ -1872,7 +1879,7 @@ public class Home extends javax.swing.JFrame {
                 row[3] = alquiler;
                 row[4] = venta;
                 model.addRow(row);
-                jTable1.setModel(model);
+                jTable1.setModel(model);*/
             }
             /*
             _out.writeInt(4);                               // Mensaje enviado, propiedad actual
