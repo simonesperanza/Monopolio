@@ -7,10 +7,10 @@ public class Registry {
     
     public int DEVOLVER_VENTA = 14;
     public int DEVOLVER_SALDO = 15;
-    public int DEVOLVER_POS = 16;
-    public int DEVOLVER_CASA = 17;
-    public int DEVOLVER_HOTEL = 18;
-    public int DEVOLVER_RENTA = 19;
+    public int DEVOLVER_POS = 41;
+    public int DEVOLVER_CASA = 42;
+    public int DEVOLVER_HOTEL = 43;
+    public int DEVOLVER_RENTA = 44;
     
     public int COMPRAR_CASILLA = 30;
     public int VENDER_CASILLA = 31;

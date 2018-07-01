@@ -139,26 +139,20 @@ public class Servidor {
                 output.writeInt(Math.round(jugador.getSaldo()));
                 System.out.println("CONTROL - SALDO DEL CLIENTE: "+Math.round(jugador.getSaldo()));
                 break;
-            case 16:
-                //EL CLIENTE SOLICITA SU POSICION
-                output.writeInt(jugador.getPos());
-                System.out.println("CONTROL - POSICION DEL CLIENTE: "+jugador.getPos());
-                break;
-            case 17:
-                //EL CLIENTE SOLICITA SI LA POSICION DONDE ESTA TIENE O NO CASA
-                output.writeInt(jugador.tengoCasa(jugador, _tablero));
-                System.out.println("CONTROL - EL CLIENTE TIENE CASA?: "+jugador.tengoCasa(jugador, _tablero));
-                break;
-            case 18:
-                //EL CLIENTE SOLICITA SI LA POSICION TIENE O NO HOTEL
-                output.writeInt(jugador.tengoHotel(jugador, _tablero));
-                System.out.println("CONTROL - EL CLIENTE TIENE HOTEL?: "+jugador.tengoHotel(jugador, _tablero));
-                break;
-            case 19:
-                //EL CLIENTE QUIERE SABER EL MONTO DE ALQUILER
-                output.writeInt(jugador.rentaCasilla(jugador, _tablero));
-                System.out.println("CONTROL - RENTA DE LA CASILLA DEL CLIENTE: "+jugador.rentaCasilla(jugador, _tablero));
-                break;
+            case 16://SOLICITAR POSICION DEL JUGADOR 1
+                    output.writeInt(jugador1.getPos());
+                    break;
+            case 17://SOLICITAR POSICION DEL JUGADOR 2
+                    output.writeInt(jugador2.getPos());
+                    break;
+            case 18://SOLICITAR POSICION DEL JUGADOR 3
+                    output.writeInt(jugador3.getPos());
+                    break;
+            case 19://SOLICITAR POSICION DEL JUGADOR 4
+                    output.writeInt(jugador4.getPos());
+                    break;
+            case 20:output.writeInt(jugador.getPos());
+                    break;
             case 30:
                 //EL CLIENTE SELECCIONO LA OPCION DE COMPRAR CASILLA
                 System.out.println("CONTROL - Comprando Casilla");
@@ -193,7 +187,26 @@ public class Servidor {
                 output.writeInt(jugador.getNroJugador());
                 System.out.println("CONTROL - EL CLIENTE ES EL JUGADOR: "+jugador.getNroJugador());
                 break;
-                
+            case 41:
+                //EL CLIENTE SOLICITA SU POSICION
+                output.writeInt(jugador.getPos());
+                System.out.println("CONTROL - POSICION DEL CLIENTE: "+jugador.getPos());
+                break;
+            case 42:
+                //EL CLIENTE SOLICITA SI LA POSICION DONDE ESTA TIENE O NO CASA
+                output.writeInt(jugador.tengoCasa(jugador, _tablero));
+                System.out.println("CONTROL - EL CLIENTE TIENE CASA?: "+jugador.tengoCasa(jugador, _tablero));
+                break;
+            case 43:
+                //EL CLIENTE SOLICITA SI LA POSICION TIENE O NO HOTEL
+                output.writeInt(jugador.tengoHotel(jugador, _tablero));
+                System.out.println("CONTROL - EL CLIENTE TIENE HOTEL?: "+jugador.tengoHotel(jugador, _tablero));
+                break;
+            case 44:
+                //EL CLIENTE QUIERE SABER EL MONTO DE ALQUILER
+                output.writeInt(jugador.rentaCasilla(jugador, _tablero));
+                System.out.println("CONTROL - RENTA DE LA CASILLA DEL CLIENTE: "+jugador.rentaCasilla(jugador, _tablero));
+                break;
         }        
     }
     

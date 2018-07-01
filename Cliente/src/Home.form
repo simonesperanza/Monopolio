@@ -1544,7 +1544,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="850" y="0" width="400" height="640"/>
+          <AbsoluteConstraints x="850" y="0" width="400" height="680"/>
         </Constraint>
       </Constraints>
 
@@ -1569,7 +1569,7 @@
                   <Component id="Perfil" min="-2" pref="86" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="Propiedades" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="10" max="32767" attributes="0"/>
+                  <EmptySpace pref="50" max="32767" attributes="0"/>
                   <Component id="Acciones" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -1591,25 +1591,12 @@
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="PiezaPerfil" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="Jugador" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="Balance" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="Jugador" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="Cash" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="PropiedadesCantidad" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                              <Component id="Cash" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -1631,14 +1618,8 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="Cash" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="PropiedadesCantidad" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="Balance" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
@@ -1670,38 +1651,12 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Cash:"/>
+                <Property name="text" type="java.lang.String" value="Saldo:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
                 <Property name="text" type="java.lang.String" value="1700 $"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel12">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="5700 $"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="Balance">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="12" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Balance:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="PropiedadesCantidad">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="12" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Propiedades:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel14">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="3"/>
               </Properties>
             </Component>
           </SubComponents>

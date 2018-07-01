@@ -30,6 +30,8 @@ public class Home extends javax.swing.JFrame {
     Accion accion = new Accion();
     int nroJugador;
     int mensaje;
+    int posicionActual;
+    
     public Home() {
         initComponents();
        /* _conn = new Conexion();
@@ -195,10 +197,6 @@ public class Home extends javax.swing.JFrame {
         Jugador = new javax.swing.JLabel();
         Cash = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        Balance = new javax.swing.JLabel();
-        PropiedadesCantidad = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         Acciones = new javax.swing.JPanel();
         BotonDados = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -1352,19 +1350,9 @@ public class Home extends javax.swing.JFrame {
         Jugador.setText("Mr. Sombrero");
 
         Cash.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Cash.setText("Cash:");
+        Cash.setText("Saldo:");
 
         jLabel10.setText("1700 $");
-
-        jLabel12.setText("5700 $");
-
-        Balance.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Balance.setText("Balance:");
-
-        PropiedadesCantidad.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        PropiedadesCantidad.setText("Propiedades:");
-
-        jLabel14.setText("3");
 
         javax.swing.GroupLayout PerfilLayout = new javax.swing.GroupLayout(Perfil);
         Perfil.setLayout(PerfilLayout);
@@ -1374,22 +1362,12 @@ public class Home extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(PiezaPerfil)
                 .addGap(28, 28, 28)
-                .addGroup(PerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Jugador)
                     .addGroup(PerfilLayout.createSequentialGroup()
-                        .addComponent(Balance)
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel12))
-                    .addGroup(PerfilLayout.createSequentialGroup()
-                        .addGroup(PerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Jugador)
-                            .addGroup(PerfilLayout.createSequentialGroup()
-                                .addComponent(Cash)
-                                .addGap(44, 44, 44)
-                                .addComponent(jLabel10)))
-                        .addGap(18, 18, 18)
-                        .addComponent(PropiedadesCantidad)
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel14)))
+                        .addComponent(Cash)
+                        .addGap(44, 44, 44)
+                        .addComponent(jLabel10)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PerfilLayout.setVerticalGroup(
@@ -1405,13 +1383,8 @@ public class Home extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(PerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Cash)
-                            .addComponent(jLabel10)
-                            .addComponent(PropiedadesCantidad)
-                            .addComponent(jLabel14))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Balance)
-                            .addComponent(jLabel12))))
+                            .addComponent(jLabel10))
+                        .addGap(21, 21, 21)))
                 .addGap(50, 50, 50))
         );
 
@@ -1672,12 +1645,12 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(Perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Propiedades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addComponent(Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        getContentPane().add(Controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 400, 640));
+        getContentPane().add(Controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 400, 680));
 
         Login.setBackground(new java.awt.Color(51, 102, 255));
 
@@ -1817,9 +1790,14 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor2(BotonDados);
         try {
+            
+            //Solicitando posicion actual
+            _out.writeInt(20);
+            posicionActual = _input.readInt();
+                    
             _out.writeInt(2);                               // Mensaje enviado, se lanzaron los dados
             mensaje = _input.readInt();
-            System.out.println("Resulatado de los dados: "+mensaje);          // Recepcion de la posicion donde cae el usuario
+            System.out.println("Nuevas posicion en tablero: "+mensaje);          // Recepcion de la posicion donde cae el usuario
             
             if (nroJugador == 1){
                 accion.ActualizarPosicionPieza(PiezaCarro, mensaje);
@@ -1831,9 +1809,27 @@ public class Home extends javax.swing.JFrame {
                 accion.ActualizarPosicionPieza(PiezaZapato, mensaje);
             }
             
-            /*_out.writeInt(15);                              // Mensaje enviado, solicitando balance actual
-            System.out.println(_input.readInt());          // 
-            */
+            for (int i=1; i<=4; i++){
+                int msj = 0;
+                if (nroJugador != i){
+                    _out.writeInt(15+i);
+                    msj = _input.readInt();
+                    if (i == 1){
+                        accion.ActualizarPosicionPieza(PiezaCarro, msj);
+                        } else if (i == 2){
+                            accion.ActualizarPosicionPieza(PiezaBarco, msj);
+                        } else if (i == 3){
+                            accion.ActualizarPosicionPieza(PiezaSombrero, msj);
+                        } else if (i == 4){
+                            accion.ActualizarPosicionPieza(PiezaZapato, msj);
+                    }
+                }
+            }
+            
+            _out.writeInt(15); // Mensaje enviado solicitando saldo actual
+            mensaje = _input.readInt();
+            jLabel10.setText(String.valueOf(mensaje));
+            
         } catch (IOException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1856,9 +1852,9 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor2(BotonComprar);
         try {
-            _out.writeInt(16); // ENVIO SOLICITUD PARA SABER EN QUE POSICION ESTOY
+            _out.writeInt(41); // ENVIO SOLICITUD PARA SABER EN QUE POSICION ESTOY
             int pos = _input.readInt();
-            _out.writeInt(19); // SOLICITO EL MONTO DEL ALQUILER
+            _out.writeInt(44); // SOLICITO EL MONTO DEL ALQUILER
             int alquiler = _input.readInt();
             _out.writeInt(14); // EL VALOR DE LA PROPIEDAD DONDE ESTOY
             int venta = _input.readInt();
@@ -1943,9 +1939,7 @@ public class Home extends javax.swing.JFrame {
         setColor2(BotonFinTurno);
         //PiezaCarro.setLocation(127, 20);
         try {
-            //_out.writeInt(7);                               // Mensaje enviado, indica fin de turno
-            _out.writeInt(1);   
-            //int casillaPos = _input.readInt();          // Recepcion de la posicion donde cae el usuario TESTING
+            _out.writeInt(1);
         } catch (IOException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1959,7 +1953,6 @@ public class Home extends javax.swing.JFrame {
     private void BotonLoginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonLoginMousePressed
         try {
             // TODO add your handling code here:
-            Login.setVisible(false);
             _conn = new Conexion(IPlogin.getText());
             _conn.initClient();
             _out = _conn.getOut();
@@ -1970,6 +1963,11 @@ public class Home extends javax.swing.JFrame {
             nroJugador = _input.readInt();
             System.out.println("El numero de jugador es: "+nroJugador);
             
+            _out.writeInt(15); // Mensaje enviado solicitando saldo actual
+            mensaje = _input.readInt();
+            jLabel10.setText(String.valueOf(mensaje));
+            
+            Login.setVisible(false);
             Tablero.setVisible(true);
             Controles.setVisible(true);
         } catch (IOException ex) {
@@ -2438,7 +2436,7 @@ public class Home extends javax.swing.JFrame {
      * Para hacer que la screen del app se mueva al hacer dragg del panel
      * derecho (NO FUNCIONA TODAVIA, requiere modificaciones)
      */
-    int xx,xy;
+    /*int xx,xy;
     
     private void ControlesMousePressed(java.awt.event.MouseEvent evt) {                                     
         // TODO add your handling code here:
@@ -2451,7 +2449,8 @@ public class Home extends javax.swing.JFrame {
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xx, y - xy);  
-    }                
+    }    
+    */
     /*
     private void BotonDadosPressDown(java.awt.event.MouseEvent evt){
         try {
@@ -2465,7 +2464,6 @@ public class Home extends javax.swing.JFrame {
     */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Acciones;
-    private javax.swing.JLabel Balance;
     private javax.swing.JPanel BotonComprar;
     private javax.swing.JPanel BotonDados;
     private javax.swing.JPanel BotonFinTurno;
@@ -2568,13 +2566,10 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel PiezaSombrero;
     private javax.swing.JLabel PiezaZapato;
     private javax.swing.JPanel Propiedades;
-    private javax.swing.JLabel PropiedadesCantidad;
     private javax.swing.JPanel Tablero;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

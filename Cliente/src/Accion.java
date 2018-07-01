@@ -1,4 +1,5 @@
 
+import java.util.concurrent.TimeUnit;
 import javax.swing.JLabel;
 
 /*
@@ -13,6 +14,31 @@ import javax.swing.JLabel;
  */
 public class Accion {
 
+    public void MoverPieza(JLabel pieza, int posicionActual, int destino){
+        try{
+            if (destino < posicionActual){
+
+                for (int i = posicionActual+1; i<= 40; i++){
+                    TimeUnit.MILLISECONDS.sleep(250);
+                    ActualizarPosicionPieza(pieza, i);
+                }
+
+                for (int i = 0; i <= destino; i++){
+                    TimeUnit.MILLISECONDS.sleep(250);
+                    ActualizarPosicionPieza(pieza, i);
+                }
+            } else{
+                for (int i = posicionActual+1; i<= destino; i++){
+                    TimeUnit.MILLISECONDS.sleep(250);
+                    ActualizarPosicionPieza(pieza, i);
+                }
+            }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        
+    }
+    
     public void ActualizarPosicionPieza(JLabel pieza, int posicion){
         switch(posicion) {
                 case 0 :
