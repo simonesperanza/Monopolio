@@ -1343,6 +1343,7 @@ public class Home extends javax.swing.JFrame {
         getContentPane().add(Tablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 850));
 
         Controles.setBackground(new java.awt.Color(51, 102, 255));
+        Controles.setPreferredSize(new java.awt.Dimension(350, 852));
 
         Perfil.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1673,12 +1674,12 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(Perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Propiedades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        getContentPane().add(Controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 400, 850));
+        getContentPane().add(Controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 400, 640));
 
         Login.setBackground(new java.awt.Color(51, 102, 255));
 
@@ -1820,7 +1821,7 @@ public class Home extends javax.swing.JFrame {
         try {
             _out.writeInt(2);                               // Mensaje enviado, se lanzaron los dados
             mensaje = _input.readInt();
-            System.out.println("Dados: "+mensaje);          // Recepcion de la posicion donde cae el usuario
+            System.out.println("Resulatado de los dados: "+mensaje);          // Recepcion de la posicion donde cae el usuario
             
             if (nroJugador == 1){
                 accion.ActualizarPosicionPieza(PiezaCarro, mensaje);
@@ -1832,8 +1833,9 @@ public class Home extends javax.swing.JFrame {
                 accion.ActualizarPosicionPieza(PiezaZapato, mensaje);
             }
             
-            _out.writeInt(15);                              // Mensaje enviado, solicitando balance actual
+            /*_out.writeInt(15);                              // Mensaje enviado, solicitando balance actual
             System.out.println(_input.readInt());          // 
+            */
         } catch (IOException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1950,6 +1952,7 @@ public class Home extends javax.swing.JFrame {
             Tablero.setVisible(true);
             Controles.setVisible(true);
         } catch (IOException ex) {
+            System.out.println("Error en el boton del login");
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_BotonLoginMousePressed
@@ -2428,7 +2431,7 @@ public class Home extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         this.setLocation(x - xx, y - xy);  
     }                
-    
+    /*
     private void BotonDadosPressDown(java.awt.event.MouseEvent evt){
         try {
             _out.writeInt(2);
@@ -2438,7 +2441,7 @@ public class Home extends javax.swing.JFrame {
         // pedir la posicion en que queda el usuario
         // pedir el balance/cash
     }
-
+    */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Acciones;
     private javax.swing.JLabel Balance;
