@@ -142,6 +142,8 @@ public class Servidor {
             case 19://SOLICITAR POSICION DEL JUGADOR 4
                     output.writeInt(jugador4.getPos());
                     break;
+            case 20:output.writeInt(jugador.getPos());
+                    break;
             case 30://EL CLIENTE SELECCIONO LA OPCION DE COMPRAR CASILLA
                     System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
                     respuesta = jugador.ComprarCasilla(jugador, _tablero);
