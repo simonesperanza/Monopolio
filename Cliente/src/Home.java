@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
 import java.io.ByteArrayOutputStream;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -29,7 +30,6 @@ public class Home extends javax.swing.JFrame {
     Accion accion = new Accion();
     int nroJugador;
     int mensaje;
-    
     public Home() {
         initComponents();
        /* _conn = new Conexion();
@@ -43,7 +43,6 @@ public class Home extends javax.swing.JFrame {
        */
        Tablero.setVisible(false);
        Controles.setVisible(false);
-        
         /*
             CARTAS SE PONEN NO VISIBLES DESDE EL INICIO
         */
@@ -88,7 +87,6 @@ public class Home extends javax.swing.JFrame {
         Carta38.setVisible(false);
         Carta39.setVisible(false);
         Carta40.setVisible(false);
-        
 
     }
 
@@ -1858,6 +1856,29 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColor2(BotonComprar);
         try {
+            _out.writeInt(16); // ENVIO SOLICITUD PARA SABER EN QUE POSICION ESTOY
+            int pos = _input.readInt();
+            _out.writeInt(19); // SOLICITO EL MONTO DEL ALQUILER
+            int alquiler = _input.readInt();
+            _out.writeInt(14); // EL VALOR DE LA PROPIEDAD DONDE ESTOY
+            int venta = _input.readInt();
+            _out.writeInt(30);// ENVIO AL SERVIDOR LA SOLICITUD DE COMPRA
+            mensaje = _input.readInt(); //RECIBO EL MENSAJE ENVIDO POR EL SERVIDOR
+            if(mensaje !=-1){
+                //NO HUBO ERROR Y LA PROPIEDAD SE PUDO COMPRAR
+                // PROCEDO A ACTUALIZAR EL JTABLE1 QUE TIENE LA INFORMACION DE LAS PROPIEDADES
+                DefaultTableModel model = new DefaultTableModel();
+                Tablero tab = new Tablero();
+                Object[] row = new Object[5];
+                row[0] = tab.getCasillas(pos);
+                row[1] = false;
+                row[2] = false;
+                row[3] = alquiler;
+                row[4] = venta;
+                model.addRow(row);
+                jTable1.setModel(model);
+            }
+            /*
             _out.writeInt(4);                               // Mensaje enviado, propiedad actual
             System.out.println(_input.readInt());          // Recepcion de la propiedad en la que se encuentra el usuario
             _out.writeInt(15);                               // Mensaje enviado solicitando balance actual
@@ -1870,10 +1891,10 @@ public class Home extends javax.swing.JFrame {
 		}
 		String balanceSaldo = bArrOutStrem.toString("UTF-8");
             _out.writeInt(3);                              // Mensaje enviado, propiedad comprada
-            System.out.println(_input.readInt());          // Recepcion de la propiedad comprada por el usuario
+            System.out.println(_input.readInt()); */         // Recepcion de la propiedad comprada por el usuario
         } catch (IOException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
     }//GEN-LAST:event_BotonComprarMousePressed
 
     /*

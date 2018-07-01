@@ -90,6 +90,40 @@ public class Jugador {
             }
         return msg;
     }
+    
+    public int tengoHotel(Jugador jugador, Tablero tablero){
+        Casilla casilla = tablero.getTablero().get(jugador.getPos());
+        int msg = 0;
+        if(casilla.isHotel())
+            msg = 1;
+        return msg;
+    }
+    
+    public int tengoCasa(Jugador jugador, Tablero tablero){
+        Casilla casilla = tablero.getTablero().get(jugador.getPos());
+        int msg = 0;
+        if(casilla.isCasa())
+            msg = 1;
+        return msg;
+    }
+    
+    public int rentaCasilla(Jugador jugador, Tablero tablero){
+        
+        Casilla casilla = tablero.getTablero().get(jugador.getPos());
+        int msg = Math.round(casilla.getAlquiler());
+        if(casilla.isCasa()){
+            msg = Math.round(casilla.getAlquilerCasa());
+        }else{
+            if(casilla.isHotel())
+                msg = Math.round(casilla.getAlquilerHotel());
+        }
+        return Math.round(casilla.getAlquiler());
+    }
+    
+    public int ventaCasilla(Jugador jugador, Tablero tablero){
+        Casilla casilla = tablero.getTablero().get(jugador.getPos());
+        return Math.round(casilla.getPrecio()/2);
+    }
 
     public int getNroJugador() {
         return nroJugador;

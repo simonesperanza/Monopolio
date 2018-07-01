@@ -129,12 +129,39 @@ public class Servidor {
                 //ComprobarCasilla(jugador); ENVIO A COMPROBAR LA CASILLA
                 output.writeInt(jugador.getPos());
                 break;
+            case 14:
+                //EL CLIENTE SOLICITA EL VALOR DE VENTA DE SU PROPIEDAD
+                output.writeInt(jugador.ventaCasilla(jugador, _tablero));
+                System.out.println("CONTROL - VALOR DE VENTA LA PORPIEDAD A COMRAR: "+jugador.ventaCasilla(jugador, _tablero));
+                break;
             case 15:
                 //EL CLIENTE SOLICITA SU SALDO
                 output.writeInt(Math.round(jugador.getSaldo()));
+                System.out.println("CONTROL - SALDO DEL CLIENTE: "+Math.round(jugador.getSaldo()));
+                break;
+            case 16:
+                //EL CLIENTE SOLICITA SU POSICION
+                output.writeInt(jugador.getPos());
+                System.out.println("CONTROL - POSICION DEL CLIENTE: "+jugador.getPos());
+                break;
+            case 17:
+                //EL CLIENTE SOLICITA SI LA POSICION DONDE ESTA TIENE O NO CASA
+                output.writeInt(jugador.tengoCasa(jugador, _tablero));
+                System.out.println("CONTROL - EL CLIENTE TIENE CASA?: "+jugador.tengoCasa(jugador, _tablero));
+                break;
+            case 18:
+                //EL CLIENTE SOLICITA SI LA POSICION TIENE O NO HOTEL
+                output.writeInt(jugador.tengoHotel(jugador, _tablero));
+                System.out.println("CONTROL - EL CLIENTE TIENE HOTEL?: "+jugador.tengoHotel(jugador, _tablero));
+                break;
+            case 19:
+                //EL CLIENTE QUIERE SABER EL MONTO DE ALQUILER
+                output.writeInt(jugador.rentaCasilla(jugador, _tablero));
+                System.out.println("CONTROL - RENTA DE LA CASILLA DEL CLIENTE: "+jugador.rentaCasilla(jugador, _tablero));
                 break;
             case 30:
                 //EL CLIENTE SELECCIONO LA OPCION DE COMPRAR CASILLA
+                System.out.println("CONTROL - Comprando Casilla");
                 System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
                 respuesta = jugador.ComprarCasilla(jugador, _tablero);
                 System.out.println("CONTROL - Saldo Final: "+jugador.getSaldo());
@@ -164,6 +191,7 @@ public class Servidor {
             case 40:
                 // OPCION PARA DEVOLVER QUE NUMERO DE JUGADOR SOY
                 output.writeInt(jugador.getNroJugador());
+                System.out.println("CONTROL - EL CLIENTE ES EL JUGADOR: "+jugador.getNroJugador());
                 break;
                 
         }        
