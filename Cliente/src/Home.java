@@ -26,6 +26,9 @@ public class Home extends javax.swing.JFrame {
     Conexion _conn;
     DataOutputStream _out;
     DataInputStream _input;
+    Accion accion = new Accion();
+    int nroJugador;
+    int mensaje;
     
     public Home() {
         initComponents();
@@ -1816,7 +1819,19 @@ public class Home extends javax.swing.JFrame {
         setColor2(BotonDados);
         try {
             _out.writeInt(2);                               // Mensaje enviado, se lanzaron los dados
-            System.out.println(_input.readInt());          // Recepcion de la posicion donde cae el usuario
+            mensaje = _input.readInt();
+            System.out.println("Dados: "+mensaje);          // Recepcion de la posicion donde cae el usuario
+            
+            if (nroJugador == 1){
+                accion.ActualizarPosicionPieza(PiezaCarro, mensaje);
+            } else if (nroJugador == 2){
+                accion.ActualizarPosicionPieza(PiezaBarco, mensaje);
+            } else if (nroJugador == 3){
+                accion.ActualizarPosicionPieza(PiezaSombrero, mensaje);
+            } else if (nroJugador == 4){
+                accion.ActualizarPosicionPieza(PiezaZapato, mensaje);
+            }
+            
             _out.writeInt(15);                              // Mensaje enviado, solicitando balance actual
             System.out.println(_input.readInt());          // 
         } catch (IOException ex) {
@@ -1903,395 +1918,11 @@ public class Home extends javax.swing.JFrame {
     private void BotonFinTurnoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonFinTurnoMousePressed
         // TODO add your handling code here:
         setColor2(BotonFinTurno);
-        PiezaCarro.setLocation(127, 20);
+        //PiezaCarro.setLocation(127, 20);
         try {
-            _out.writeInt(7);                               // Mensaje enviado, indica fin de turno
-            int casillaPos = _input.readInt();          // Recepcion de la posicion donde cae el usuario TESTING
-            
-            /*
-                PARA MOVER LAS PIEZAS (SOMBRERO, CARRO, ETC)
-                
-                Necesitann modificarlo con 2 detalles, 1 if que asigne (dependiendo del turno y a quien le toca la pieza que se debe mover, osea, pieza 0=sombrero
-                1=bota, etc y asi.
-                yo solo lo aplique para la piezaCarro, pero es para que vean como se aplica, cambien carro por una variable que ustedes asignen y pidan al servidor de quien es
-            el turno para asignarla.
-            */
-            
-            switch(casillaPos) {
-                case 0 :
-                   PiezaCarro.setLocation(760, 770);
-                   break; // optional
-
-                case 1 :
-                    PiezaCarro.setLocation(670, 770);
-                   break; // optional
-                   
-                case 2 :
-                    PiezaCarro.setLocation(600, 770);
-                   break; // optional
-                   
-                case 3 :
-                    PiezaCarro.setLocation(530, 770);
-                   break; // optional
-                   
-                case 4 :
-                    PiezaCarro.setLocation(460, 770);
-                   break; // optional
-                
-                case 5 :
-                    PiezaCarro.setLocation(390, 770);
-                   break; // optional
-                  
-                case 6 :
-                    PiezaCarro.setLocation(320, 770);
-                   break; // optional
-                   
-                case 7 :
-                    PiezaCarro.setLocation(250, 770);
-                   break; // optional
-                  
-                case 8 :
-                    PiezaCarro.setLocation(180, 770);
-                   break; // optional
-                   
-                case 9 :
-                    PiezaCarro.setLocation(110, 770);
-                   break; // optional
-                   
-                case 10 :
-                    PiezaCarro.setLocation(-10, 810);
-                   break; // optional
-                   
-                case 11 :
-                    PiezaCarro.setLocation(10, 680);
-                   break; // optional
-                   
-                case 12 :
-                    PiezaCarro.setLocation(10, 610);
-                   break; // optional
-                   
-                case 13 :
-                    PiezaCarro.setLocation(10, 540);
-                   break; // optional
-                   
-                case 14 :
-                    PiezaCarro.setLocation(10, 470);
-                   break; // optional
-                   
-                case 15 :
-                    PiezaCarro.setLocation(10, 400);
-                   break; // optional
-                   
-                case 16 :
-                    PiezaCarro.setLocation(10, 330);
-                   break; // optional
-                   
-                case 17 :
-                    PiezaCarro.setLocation(10, 260);
-                   break; // optional
-                   
-                case 18 :
-                    PiezaCarro.setLocation(10, 190);
-                   break; // optional
-                   
-                case 19 :
-                    PiezaCarro.setLocation(10, 120);
-                   break; // optional
-                   
-                case 20 :
-                    PiezaCarro.setLocation(20, 30);
-                   break; // optional
-                   
-                case 21 :
-                    PiezaCarro.setLocation(110, 20);
-                   break; // optional
-                   
-                case 22 :
-                    PiezaCarro.setLocation(180, 20);
-                   break; // optional
-                   
-                case 23 :
-                    PiezaCarro.setLocation(250, 20);
-                   break; // optional
-                   
-                case 24 :
-                    PiezaCarro.setLocation(320, 20);
-                   break; // optional
-                   
-                case 25 :
-                    PiezaCarro.setLocation(390, 20);
-                   break; // optional
-                   
-                case 26 :
-                    PiezaCarro.setLocation(460, 20);
-                   break; // optional
-                   
-                case 27 :
-                    PiezaCarro.setLocation(530, 20);
-                   break; // optional
-                   
-                case 28 :
-                    PiezaCarro.setLocation(600, 20);
-                   break; // optional   
-
-                case 29 :
-                    PiezaCarro.setLocation(670, 20);
-                   break; // optional
-                   
-                case 30 :
-                    PiezaCarro.setLocation(760, 30);
-                   break; // optional
-                   
-                case 31 :
-                    PiezaCarro.setLocation(770, 130);
-                   break; // optional
-                   
-                case 32 :
-                    PiezaCarro.setLocation(770, 200);
-                   break; // optional
-                   
-                case 33 :
-                    PiezaCarro.setLocation(770, 270);
-                   break; // optional
-                     
-                case 34 :
-                    PiezaCarro.setLocation(770, 340);
-                   break; // optional
-                   
-                case 35 :
-                    PiezaCarro.setLocation(770, 410);
-                   break; // optional
-                   
-                case 36 :
-                    PiezaCarro.setLocation(770, 480);
-                   break; // optional
-
-                case 37 :
-                    PiezaCarro.setLocation(770, 550);
-                   break; // optional
-                  
-                case 38 :
-                    PiezaCarro.setLocation(770, 620);
-                   break; // optional
-                   
-                case 39 :
-                    PiezaCarro.setLocation(770, 690);
-                   break; // optional
-                   
-                case 40 :
-                    PiezaCarro.setLocation(40, 760);
-                   break; // optional
-
-                default : // Optional
-                   // Statements
-             }
-            
-            /*
-                PARA MOSTRAR CASA
-                
-                Necesitann modificarlo 
-                No tiene color por jugador asignado y no crea piezas extra, necesita crear piezas extra y evaluar si se vende la casa/hotel
-                Osea, seria crear un objeto tipo casa en estas coordenadas, las coordenas son las unicas que pueden tener. En casillas que sean posibles poner hotel/casa.
-                Lo pense como que uno devuelve el mensaje de la casilla donde compro la casa/hotel
-            */
-            
-            switch(casillaPos) {
-
-                case 1 :
-                    Casa2.setLocation(680, 740);
-                   break; // optional
-                   
-                case 3 :
-                    Casa2.setLocation(540, 740);
-                   break; // optional
-                  
-                case 6 :
-                    Casa2.setLocation(330, 740);
-                   break; // optional
-                  
-                case 8 :
-                    Casa2.setLocation(190, 740);
-                   break; // optional
-                   
-                case 9 :
-                    Casa2.setLocation(120, 740);
-                   break; // optional
-                   
-                case 11 :
-                    Casa2.setLocation(90, 680);
-                   break; // optional
-                   
-                case 13 :
-                    Casa2.setLocation(90, 540);
-                   break; // optional
-                   
-                case 14 :
-                    Casa2.setLocation(90, 470);
-                   break; // optional
-                   
-                case 16 :
-                    Casa2.setLocation(90, 330);
-                   break; // optional
-                   
-                case 18 :
-                    Casa2.setLocation(90, 190);
-                   break; // optional
-                   
-                case 19 :
-                    Casa2.setLocation(90, 120);
-                   break; // optional
-                   
-                case 21 :
-                    Casa2.setLocation(150, 90);
-                   break; // optional
-                   
-                case 23 :
-                    Casa2.setLocation(290, 90);
-                   break; // optional
-                   
-                case 24 :
-                    Casa2.setLocation(360, 90);
-                   break; // optional
-                   
-                case 26 :
-                    Casa2.setLocation(500, 90);
-                   break; // optional
-                   
-                case 27 :
-                    Casa2.setLocation(570, 90);
-                   break; // optional  
-
-                case 29 :
-                    Casa2.setLocation(710, 90);
-                   break; // optional
-                   
-                case 31 :
-                    Casa2.setLocation(740, 150);
-                   break; // optional
-                   
-                case 32 :
-                    Casa2.setLocation(740, 220);
-                   break; // optional
-                     
-                case 34 :
-                    Casa2.setLocation(740, 360);
-                   break; // optional
-
-                case 37 :
-                    Casa2.setLocation(740, 570);
-                   break; // optional
-                   
-                case 39 :
-                    Casa2.setLocation(740, 710);
-                   break; // optional
-
-                default : // Optional
-                   // Statements
-             }
-            
-            /*
-                PARA MOSTRAR HOTEL
-                
-                Necesitann modificarlo 
-                No tiene color por jugador asignado y no crea piezas extra, necesita crear piezas extra y evaluar si se vende la casa/hotel
-                Osea, seria crear un objeto tipo casa en estas coordenadas, las coordenas son las unicas que pueden tener. En casillas que sean posibles poner hotel/casa.
-                Lo pense como que uno devuelve el mensaje de la casilla donde compro la casa/hotel
-            */
-            
-            switch(casillaPos) {
-
-                case 1 :
-                    Casa1.setLocation(700, 730);
-                   break; // optional
-                   
-                case 3 :
-                    Casa1.setLocation(560, 730);
-                   break; // optional
-                  
-                case 6 :
-                    Casa1.setLocation(350, 730);
-                   break; // optional
-                  
-                case 8 :
-                    Casa1.setLocation(210, 730);
-                   break; // optional
-                   
-                case 9 :
-                    Casa1.setLocation(140, 730);
-                   break; // optional
-                   
-                case 11 :
-                    Casa1.setLocation(90, 700);
-                   break; // optional
-                   
-                case 13 :
-                    Casa1.setLocation(90, 560);
-                   break; // optional
-                   
-                case 14 :
-                    Casa1.setLocation(90, 490);
-                   break; // optional
-                   
-                case 16 :
-                    Casa1.setLocation(90, 350);
-                   break; // optional
-                   
-                case 18 :
-                    Casa1.setLocation(90, 210);
-                   break; // optional
-                   
-                case 19 :
-                    Casa1.setLocation(90, 140);
-                   break; // optional
-                   
-                case 21 :
-                    Casa1.setLocation(120, 80);
-                   break; // optional
-                   
-                case 23 :
-                    Casa1.setLocation(260, 80);
-                   break; // optional
-                   
-                case 24 :
-                    Casa1.setLocation(330, 80);
-                   break; // optional
-                   
-                case 26 :
-                    Casa1.setLocation(470, 80);
-                   break; // optional
-                   
-                case 27 :
-                    Casa1.setLocation(540, 80);
-                   break; // optional  
-
-                case 29 :
-                    Casa1.setLocation(680, 80);
-                   break; // optional
-                   
-                case 31 :
-                    Casa1.setLocation(740, 120);
-                   break; // optional
-                   
-                case 32 :
-                    Casa1.setLocation(740, 190);
-                   break; // optional
-                     
-                case 34 :
-                    Casa1.setLocation(740, 330);
-                   break; // optional
-
-                case 37 :
-                    Casa1.setLocation(740, 540);
-                   break; // optional
-                   
-                case 39 :
-                    Casa1.setLocation(740, 680);
-                   break; // optional
-
-                default : // Optional
-                   // Statements
-             }
-            
+            //_out.writeInt(7);                               // Mensaje enviado, indica fin de turno
+            _out.writeInt(1);   
+            //int casillaPos = _input.readInt();          // Recepcion de la posicion donde cae el usuario TESTING
         } catch (IOException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2303,15 +1934,24 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonLoginActionPerformed
 
     private void BotonLoginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonLoginMousePressed
-        // TODO add your handling code here:
-        Login.setVisible(false);
-        _conn = new Conexion(IPlogin.getText());
-        _conn.initClient(); 
-        _out = _conn.getOut();
-        _input = _conn.getInput();
-        
-       Tablero.setVisible(true);
-       Controles.setVisible(true);
+        try {
+            // TODO add your handling code here:
+            Login.setVisible(false);
+            _conn = new Conexion(IPlogin.getText());
+            _conn.initClient();
+            _out = _conn.getOut();
+            _input = _conn.getInput();
+            
+            // Preguntar numero del jugador
+            _out.writeInt(40);
+            nroJugador = _input.readInt();
+            System.out.println("El numero de jugador es: "+nroJugador);
+            
+            Tablero.setVisible(true);
+            Controles.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_BotonLoginMousePressed
 
     private void IPloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IPloginActionPerformed

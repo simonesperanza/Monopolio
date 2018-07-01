@@ -115,6 +115,8 @@ public class Servidor {
         int respuesta = 0;
         switch (mensaje){
             //Mover ficha
+            case 1: System.out.println("Fin de turno del jugador "+jugador.getNroJugador());
+                    break;
             case 2 :
                 //LANZO EL DADO Y ACTUALIZO LA POSICION DEL JUGADOR 
                 int pasos = lanzarDado(); //Guardo la cantidad de pasos a moverme
@@ -148,6 +150,10 @@ public class Servidor {
                 System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
                 respuesta = jugador.ComprarHotel(jugador, _tablero);
                 System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
+                break;
+            case 40: output.writeInt(jugador.getNroJugador());
+                    break;
+                
         }
         return respuesta;
         
