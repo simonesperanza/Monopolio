@@ -96,7 +96,7 @@ public class Servidor {
                         System.out.println("Esperando mensaje de jugador 4: ");
                         _mensaje = _conn.getInput4().readInt();
                         System.out.println("Mensaje leido de 2: " + _mensaje);
-                        jugar(_mensaje, jugador3, _conn.getOutput4());
+                        jugar(_mensaje, jugador4, _conn.getOutput4());
                         }    
                     }
                 }
