@@ -164,7 +164,8 @@ public class Servidor {
             case 31:
                 //EL CLIENTE SELECCIONA LA OPCION DE VENDER CASILLA
                 System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
-                respuesta = jugador.VenderCasilla(jugador, _tablero);
+                venderCasilla(jugador);
+                //respuesta = jugador.VenderCasillaPosicion(jugador, _tablero);
                 System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
                 output.writeInt(respuesta);
                 break;
@@ -208,6 +209,33 @@ public class Servidor {
                 System.out.println("CONTROL - RENTA DE LA CASILLA DEL CLIENTE: "+jugador.rentaCasilla(jugador, _tablero));
                 break;
         }        
+    }
+    
+    public void venderCasilla(Jugador jugador){
+        try {
+            if (jugador.getNroJugador() == 1){
+                    int casilla = _conn.getInput1().readInt();
+                   _conn.getOutput1().writeInt(
+                    jugador.VenderCasillaPosicion(jugador, _tablero, casilla));
+            }
+            else if (jugador.getNroJugador() == 2){
+                int casilla = _conn.getInput2().readInt();
+                    _conn.getOutput2().writeInt(
+                    jugador.VenderCasillaPosicion(jugador, _tablero, casilla));
+            }
+            else if (jugador.getNroJugador() == 3){
+                    int casilla = _conn.getInput3().readInt();
+                    _conn.getOutput3().writeInt(
+                    jugador.VenderCasillaPosicion(jugador, _tablero, casilla));
+            }
+            else if (jugador.getNroJugador() == 4){
+                int casilla = _conn.getInput4().readInt();
+                    _conn.getOutput4().writeInt(
+                    jugador.VenderCasillaPosicion(jugador, _tablero, casilla));
+            }
+        } catch (IOException ex) {
+                Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }
     
     public int lanzarDado(){

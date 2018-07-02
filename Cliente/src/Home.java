@@ -1918,10 +1918,18 @@ public class Home extends javax.swing.JFrame {
         setColor2(BotonVender);
         
         try {
-            _out.writeInt(4);                               // Mensaje enviado, propiedad vendida
+            _out.writeInt(31);
+            
+            jTable1.getSelectedRow();
+            //_out.writeInt();
+            mensaje = _input.readInt();
+            
+            /*_out.writeInt(4);                               // Mensaje enviado, propiedad vendida
             System.out.println(_input.readInt());          // Recepcion de la propiedad vendida por el usuario
             _out.writeInt(15);                              // Mensaje enviado, solicitando balance actual
             System.out.println(_input.readInt());          // Recepcion del valor de la propiedad vendida por el usuario
+            */
+            
         } catch (IOException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }

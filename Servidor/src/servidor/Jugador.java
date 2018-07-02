@@ -45,6 +45,19 @@ public class Jugador {
         return msg;
     }
     
+    public int VenderCasillaPosicion(Jugador jugador, Tablero tablero, int nro){
+        int msg=0;
+        Casilla casilla = tablero.getTablero().get(nro);
+        if(casilla.getDueño()==jugador.getNroJugador()){
+            casilla.setDueño(0);//LIBERO LA CASILLA
+            casilla.setHotel(false);//LIBERO LA CASA
+            casilla.setCasa(false);// LIBERO HOTEL
+            jugador.setSaldo(jugador.getSaldo()+ (casilla.getPrecio()/2) );//RETORNO LA MITAD DEL DINERO DE LO QUE INICIALMENTE VALIA LA PROPIEDAD            
+            msg=1;
+        }
+        return msg;
+    }
+    
     public int ComprarCasa(Jugador jugador, Tablero tablero){
         int msg = -1;
         Casilla casilla = tablero.getTablero().get(jugador.getPos());
