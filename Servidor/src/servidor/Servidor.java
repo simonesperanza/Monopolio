@@ -127,6 +127,7 @@ public class Servidor {
                 System.out.println("CONTROL - Posicion Final: "+jugador.getPos());
                 System.out.println("CONTROL - SALDO: "+jugador.getSaldo());
                 //ComprobarCasilla(jugador); ENVIO A COMPROBAR LA CASILLA
+                ComprobarCasilla(jugador);
                 output.writeInt(jugador.getPos());
                 break;
             case 14:
@@ -167,7 +168,7 @@ public class Servidor {
                 venderCasilla(jugador);
                 //respuesta = jugador.VenderCasillaPosicion(jugador, _tablero);
                 System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
-                output.writeInt(respuesta);
+                //output.writeInt(respuesta);
                 break;
             case 32:
                 //EL CLIENTE SELECCIONA LA OPCION DE COMPRAR CASA

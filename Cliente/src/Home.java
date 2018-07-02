@@ -1601,9 +1601,17 @@ public class Home extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Propiedad", "Casas", "Hoteles", "Renta", "Venta"
+                "Nro", "Propiedad", "Casas", "Hoteles", "Renta", "Venta"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout PropiedadesLayout = new javax.swing.GroupLayout(Propiedades);
@@ -1863,7 +1871,7 @@ public class Home extends javax.swing.JFrame {
                 //DefaultTableModel model = new DefaultTableModel();
                 DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
                 Tablero tab = new Tablero();
-                model.addRow(new Object[]{tab.getCasillas(pos), "0", "0",
+                model.addRow(new Object[]{String.valueOf(pos), tab.getCasillas(pos), "0", "0",
                 String.valueOf(alquiler), String.valueOf(venta)});
                 
                
@@ -1918,11 +1926,24 @@ public class Home extends javax.swing.JFrame {
         setColor2(BotonVender);
         
         try {
-            _out.writeInt(31);
             
-            jTable1.getSelectedRow();
-            //_out.writeInt();
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            int nroFila = jTable1.getSelectedRow();
+            String nroCasilla = model.getValueAt(nroFila, 0).toString();
+            int casilla = Integer.parseInt(nroCasilla);
+            _out.writeInt(31);
+            _out.writeInt(casilla);
             mensaje = _input.readInt();
+            
+            if (mensaje == 1){
+                model.removeRow(nroFila);
+                _out.writeInt(15); // Mensaje enviado solicitando saldo actual
+                mensaje = _input.readInt();
+                jLabel10.setText(String.valueOf(mensaje));
+            } else{
+                System.out.println("No es propiestario de la casilla: "+ casilla);
+            }
+            
             
             /*_out.writeInt(4);                               // Mensaje enviado, propiedad vendida
             System.out.println(_input.readInt());          // Recepcion de la propiedad vendida por el usuario
