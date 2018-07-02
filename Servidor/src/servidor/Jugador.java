@@ -58,22 +58,24 @@ public class Jugador {
         return msg;
     }
     
-    public int ComprarCasa(Jugador jugador, Tablero tablero){
-        int msg = -1;
-        Casilla casilla = tablero.getTablero().get(jugador.getPos());
+    public int ComprarCasa(Jugador jugador, Tablero tablero, int nroCasilla){
+        int msg = 0;
+        Casilla casilla = tablero.getTablero().get(nroCasilla);
         Casilla casilla1 = tablero.getTablero().get(casilla.getConjunto1());
         if(jugador.getPos() != 39 && jugador.getPos() != 37 && jugador.getPos() != 3 && jugador.getPos() != 1){
             Casilla casilla2 = tablero.getTablero().get(casilla.getConjunto2());
             if(casilla.getDueño()==jugador.getNroJugador() && casilla1.getDueño()==jugador.getNroJugador() && casilla2.getDueño()==jugador.getNroJugador()){ //COMPRUEBO QUE SOY EL DUEÑO DE ESAS CASILLAS
                 jugador.setSaldo(jugador.getSaldo()-casilla.getPrecioCasa());
-                msg = 32;
+                msg = 1;
                 casilla.setCasa(true);
+                System.out.println("Usted compro una casa en la casilla nro: "+nroCasilla);
             }
         }else{
             if(casilla.getDueño()==jugador.getNroJugador() && casilla1.getDueño()==jugador.getNroJugador()){ //COMPRUEBO QUE SOY EL DUEÑO DE ESAS CASILLAS
                 jugador.setSaldo(jugador.getSaldo()-casilla.getPrecioCasa());
-                msg = 32;
+                msg = 1;
                 casilla.setCasa(true);
+                System.out.println("Usted compro una casa en la casilla nro: "+nroCasilla);
             }
         }
         

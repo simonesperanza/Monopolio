@@ -173,7 +173,7 @@ public class Servidor {
             case 32:
                 //EL CLIENTE SELECCIONA LA OPCION DE COMPRAR CASA
                 System.out.println("CONTROL - Saldo Inicial: "+jugador.getSaldo());
-                respuesta = jugador.ComprarCasa(jugador, _tablero);
+                respuesta = jugador.ComprarCasa(jugador, _tablero, DondeCompraCasa(jugador));
                 System.out.println("CONTROL - Saldo Final: " + jugador.getSaldo());
                 output.writeInt(respuesta);
                 break;
@@ -210,6 +210,27 @@ public class Servidor {
                 System.out.println("CONTROL - RENTA DE LA CASILLA DEL CLIENTE: "+jugador.rentaCasilla(jugador, _tablero));
                 break;
         }        
+    }
+    
+    public int DondeCompraCasa(Jugador jugador){
+        int casilla = 0;
+        try {
+            if (jugador.getNroJugador() == 1){
+                casilla = _conn.getInput1().readInt();
+            }
+            else if (jugador.getNroJugador() == 2){
+                casilla = _conn.getInput2().readInt();
+            }
+            else if (jugador.getNroJugador() == 3){
+                casilla = _conn.getInput3().readInt();
+            }
+            else if(jugador.getNroJugador() == 4){
+                casilla = _conn.getInput4().readInt();
+            }
+        } catch (IOException ex) {
+                Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        return casilla;
     }
     
     public void venderCasilla(Jugador jugador){
