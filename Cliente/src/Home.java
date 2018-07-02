@@ -213,6 +213,7 @@ public class Home extends javax.swing.JFrame {
         BotonFinTurno = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         Propiedades = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -1566,17 +1567,29 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jButton1.setText("Comprar Casa");
+        jButton1.setActionCommand("ComprarCasaButton");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout AccionesLayout = new javax.swing.GroupLayout(Acciones);
         Acciones.setLayout(AccionesLayout);
         AccionesLayout.setHorizontalGroup(
             AccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AccionesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(AccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(AccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(BotonComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(BotonVender, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(BotonFinTurno, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(AccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BotonComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonVender, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BotonFinTurno, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AccionesLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButton1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonDados, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -1585,14 +1598,16 @@ public class Home extends javax.swing.JFrame {
             .addGroup(AccionesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(AccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotonDados, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                    .addComponent(BotonDados, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                     .addGroup(AccionesLayout.createSequentialGroup()
                         .addComponent(BotonComprar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonVender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonFinTurno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 2, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addGap(0, 12, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -1603,9 +1618,17 @@ public class Home extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Propiedad", "Casas", "Hoteles", "Renta", "Venta"
+                "Nro", "Propiedad", "Casas", "Hoteles", "Renta", "Venta"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout PropiedadesLayout = new javax.swing.GroupLayout(Propiedades);
@@ -1644,8 +1667,8 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(Perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Propiedades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addComponent(Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Acciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1865,7 +1888,7 @@ public class Home extends javax.swing.JFrame {
                 //DefaultTableModel model = new DefaultTableModel();
                 DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
                 Tablero tab = new Tablero();
-                model.addRow(new Object[]{tab.getCasillas(pos), "0", "0",
+                model.addRow(new Object[]{String.valueOf(pos), tab.getCasillas(pos), "0", "0",
                 String.valueOf(alquiler), String.valueOf(venta)});
                 
                
@@ -1873,30 +1896,7 @@ public class Home extends javax.swing.JFrame {
                 _out.writeInt(15); // Mensaje enviado solicitando saldo actual
                 mensaje = _input.readInt();
                 jLabel10.setText(String.valueOf(mensaje));
-                /*Tablero tab = new Tablero();
-                Object[] row = new Object[5];
-                row[0] = tab.getCasillas(pos);
-                row[1] = false;
-                row[2] = false;
-                row[3] = alquiler;
-                row[4] = venta;
-                model.addRow(row);
-                jTable1.setModel(model);*/
             }
-            /*
-            _out.writeInt(4);                               // Mensaje enviado, propiedad actual
-            System.out.println(_input.readInt());          // Recepcion de la propiedad en la que se encuentra el usuario
-            _out.writeInt(15);                               // Mensaje enviado solicitando balance actual
-            System.out.println(_input.readInt());          // Recepcion del balance del usuario
-            	ByteArrayOutputStream bArrOutStrem = new ByteArrayOutputStream();
-		byte[] buffer = new byte[1024];
-		int length;
-		while ((length = _input.read(buffer)) != -1) {
-			bArrOutStrem.write(buffer, 0, length);
-		}
-		String balanceSaldo = bArrOutStrem.toString("UTF-8");
-            _out.writeInt(3);                              // Mensaje enviado, propiedad comprada
-            System.out.println(_input.readInt()); */         // Recepcion de la propiedad comprada por el usuario
         } catch (IOException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         } 
@@ -1920,10 +1920,31 @@ public class Home extends javax.swing.JFrame {
         setColor2(BotonVender);
         
         try {
-            _out.writeInt(4);                               // Mensaje enviado, propiedad vendida
+            
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            int nroFila = jTable1.getSelectedRow();
+            String nroCasilla = model.getValueAt(nroFila, 0).toString();
+            int casilla = Integer.parseInt(nroCasilla);
+            _out.writeInt(31);
+            _out.writeInt(casilla);
+            mensaje = _input.readInt();
+            
+            if (mensaje == 1){
+                model.removeRow(nroFila);
+                _out.writeInt(15); // Mensaje enviado solicitando saldo actual
+                mensaje = _input.readInt();
+                jLabel10.setText(String.valueOf(mensaje));
+            } else{
+                System.out.println("No es propiestario de la casilla: "+ casilla);
+            }
+            
+            
+            /*_out.writeInt(4);                               // Mensaje enviado, propiedad vendida
             System.out.println(_input.readInt());          // Recepcion de la propiedad vendida por el usuario
             _out.writeInt(15);                              // Mensaje enviado, solicitando balance actual
             System.out.println(_input.readInt());          // Recepcion del valor de la propiedad vendida por el usuario
+            */
+            
         } catch (IOException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2413,6 +2434,39 @@ public class Home extends javax.swing.JFrame {
         Carta39.setVisible(false);
     }//GEN-LAST:event_CH39MouseExited
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        try {
+            
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            int nroFila = jTable1.getSelectedRow();
+            String nroCasilla = model.getValueAt(nroFila, 0).toString();
+            int casilla = Integer.parseInt(nroCasilla);
+            _out.writeInt(32);
+            _out.writeInt(casilla);
+            mensaje = _input.readInt();
+            
+            if (mensaje == 1){
+                model.setValueAt("1", nroFila, 2);
+                _out.writeInt(15); // Mensaje enviado solicitando saldo actual
+                mensaje = _input.readInt();
+                jLabel10.setText(String.valueOf(mensaje));
+            } else{
+                System.out.println("No puede adquirir una casa en la casilla: "+ casilla);
+            }
+            
+            
+            /*_out.writeInt(4);                               // Mensaje enviado, propiedad vendida
+            System.out.println(_input.readInt());          // Recepcion de la propiedad vendida por el usuario
+            _out.writeInt(15);                              // Mensaje enviado, solicitando balance actual
+            System.out.println(_input.readInt());          // Recepcion del valor de la propiedad vendida por el usuario
+            */
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     
     
     /**
@@ -2586,6 +2640,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel PiezaZapato;
     private javax.swing.JPanel Propiedades;
     private javax.swing.JPanel Tablero;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
