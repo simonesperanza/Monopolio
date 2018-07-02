@@ -12,6 +12,8 @@ import java.util.logging.Logger;
 import javax.swing.JPanel;
 import java.io.ByteArrayOutputStream;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.ImageIcon;
+
 
 /**
  *
@@ -1969,7 +1971,17 @@ public class Home extends javax.swing.JFrame {
             _out.writeInt(40);
             nroJugador = _input.readInt();
             System.out.println("El numero de jugador es: "+nroJugador);
-            
+            if (nroJugador == 1){
+                Jugador.setText("Carro");
+                PiezaPerfil.setIcon(new ImageIcon("car_piece75.png"));
+            } else if (nroJugador == 2){
+                Jugador.setText("Barco");
+                PiezaPerfil.setIcon(new ImageIcon("/images/boat_piece75.png"));
+            } else if (nroJugador == 3){
+                PiezaPerfil.setIcon(new ImageIcon("/images/hat_piece75.png"));
+            } else if (nroJugador == 4){
+                PiezaPerfil.setIcon(new ImageIcon("/images/shoe_piece75.png"));
+            }
             _out.writeInt(15); // Mensaje enviado solicitando saldo actual
             mensaje = _input.readInt();
             jLabel10.setText(String.valueOf(mensaje));
