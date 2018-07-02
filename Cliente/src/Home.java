@@ -213,7 +213,9 @@ public class Home extends javax.swing.JFrame {
         BotonFinTurno = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        BotonComprar1 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         Propiedades = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -1443,7 +1445,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addGap(45, 45, 45))
+                .addGap(66, 66, 66))
         );
 
         BotonComprar.setBackground(new java.awt.Color(235, 236, 238));
@@ -1464,18 +1466,18 @@ public class Home extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 102, 255));
-        jLabel6.setText("COMPRAR");
+        jLabel6.setText("COMPRAR PROP");
 
         javax.swing.GroupLayout BotonComprarLayout = new javax.swing.GroupLayout(BotonComprar);
         BotonComprar.setLayout(BotonComprarLayout);
         BotonComprarLayout.setHorizontalGroup(
             BotonComprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BotonComprarLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel5)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         BotonComprarLayout.setVerticalGroup(
             BotonComprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1567,13 +1569,45 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Comprar Casa");
-        jButton1.setActionCommand("ComprarCasaButton");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        BotonComprar1.setBackground(new java.awt.Color(235, 236, 238));
+        BotonComprar1.setPreferredSize(new java.awt.Dimension(162, 51));
+        BotonComprar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BotonComprar1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BotonComprar1MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BotonComprar1MousePressed(evt);
             }
         });
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_E-commerce_30px.png"))); // NOI18N
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(51, 102, 255));
+        jLabel13.setText("COMPRAR CASA");
+
+        javax.swing.GroupLayout BotonComprar1Layout = new javax.swing.GroupLayout(BotonComprar1);
+        BotonComprar1.setLayout(BotonComprar1Layout);
+        BotonComprar1Layout.setHorizontalGroup(
+            BotonComprar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BotonComprar1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel13)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+        BotonComprar1Layout.setVerticalGroup(
+            BotonComprar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BotonComprar1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(BotonComprar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING)))
+        );
 
         javax.swing.GroupLayout AccionesLayout = new javax.swing.GroupLayout(Acciones);
         Acciones.setLayout(AccionesLayout);
@@ -1581,15 +1615,13 @@ public class Home extends javax.swing.JFrame {
             AccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AccionesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(AccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(AccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(AccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(AccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(BotonComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BotonVender, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(BotonFinTurno, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(AccionesLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jButton1)))
+                    .addComponent(BotonComprar1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonDados, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -1598,7 +1630,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(AccionesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(AccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotonDados, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                    .addComponent(BotonDados, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
                     .addGroup(AccionesLayout.createSequentialGroup()
                         .addComponent(BotonComprar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1606,8 +1638,8 @@ public class Home extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonFinTurno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
-                        .addGap(0, 12, Short.MAX_VALUE)))
+                        .addComponent(BotonComprar1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -1667,12 +1699,12 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(Perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Propiedades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Acciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
+                .addComponent(Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        getContentPane().add(Controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 400, 680));
+        getContentPane().add(Controles, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 400, 850));
 
         Login.setBackground(new java.awt.Color(51, 102, 255));
 
@@ -1883,9 +1915,9 @@ public class Home extends javax.swing.JFrame {
             _out.writeInt(30);// ENVIO AL SERVIDOR LA SOLICITUD DE COMPRA
             mensaje = _input.readInt(); //RECIBO EL MENSAJE ENVIDO POR EL SERVIDOR
             if(mensaje !=-1){
-                //NO HUBO ERROR Y LA PROPIEDAD SE PUDO COMPRAR
+                // NO HUBO ERROR Y LA PROPIEDAD SE PUDO COMPRAR
                 // PROCEDO A ACTUALIZAR EL JTABLE1 QUE TIENE LA INFORMACION DE LAS PROPIEDADES
-                //DefaultTableModel model = new DefaultTableModel();
+                // DefaultTableModel model = new DefaultTableModel();
                 DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
                 Tablero tab = new Tablero();
                 model.addRow(new Object[]{String.valueOf(pos), tab.getCasillas(pos), "0", "0",
@@ -1902,6 +1934,8 @@ public class Home extends javax.swing.JFrame {
         } 
     }//GEN-LAST:event_BotonComprarMousePressed
 
+    
+    
     /*
         BOTON VENTA
     */
@@ -2434,8 +2468,19 @@ public class Home extends javax.swing.JFrame {
         Carta39.setVisible(false);
     }//GEN-LAST:event_CH39MouseExited
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BotonComprar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonComprar1MouseEntered
         // TODO add your handling code here:
+        setColor(BotonComprar1);
+    }//GEN-LAST:event_BotonComprar1MouseEntered
+
+    private void BotonComprar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonComprar1MouseExited
+        // TODO add your handling code here:
+       resetColor(BotonComprar1);
+    }//GEN-LAST:event_BotonComprar1MouseExited
+
+    private void BotonComprar1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonComprar1MousePressed
+        // TODO add your handling code here:
+        setColor(BotonComprar1);
         try {
             
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -2465,8 +2510,11 @@ public class Home extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BotonComprar1MousePressed
 
+    
+    
+    
     
     
     /**
@@ -2538,6 +2586,7 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Acciones;
     private javax.swing.JPanel BotonComprar;
+    private javax.swing.JPanel BotonComprar1;
     private javax.swing.JPanel BotonDados;
     private javax.swing.JPanel BotonFinTurno;
     private javax.swing.JButton BotonLogin;
@@ -2640,10 +2689,11 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel PiezaZapato;
     private javax.swing.JPanel Propiedades;
     private javax.swing.JPanel Tablero;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
